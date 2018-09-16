@@ -1,0 +1,49 @@
+*{margin:0;padding:0;font-size:.95em;font-family:microsoft yahei;outline:0;color:#ddd;line-height:0.95em;}
+body{ background:#fff; font-family:microsoft yahei; width:100%; overflow-x:auto; background:#f1f4f9; color:#ddd; width:1920px; overflow:hidden}
+textarea{resize:none}
+iframe,img{border:0; margin:0;}
+ul,ol,li{list-style:none}
+a{text-decoration:none}
+table,tr,td{border:0;}
+.Cfff{color:#fff;}
+.fleft{float:left;}
+.fright{float:right}
+.myclear{clear:both}
+.tc{text-align:center}
+.margin_auto{ margin:0 auto}
+img{vertical-align:middle}
+
+div.head_area{width:100%; height:71px;  background:white no-repeat fixed top;}
+div.head_area span{margin:10px 10px 0 10px}
+div.head_area ul li{float:left; display:inline-block;}
+div.head_area ul li a{ width:170px; height:71px; font-size:24px; line-height:71px; display:inline-block; text-align:center}
+div.head_area ul li a:link,div.head_area ul li a:visited{color:#00acff; text-decoration:none}
+div.head_area ul li a:hover,div.head_area ul li a.nav_now:link,div.head_area ul li a.nav_now:visited,div.head_area ul li a.nav_now:hover{color:#fff; text-decoration:none; background:url(../images/nav_hover.png) left top}
+
+div.left_area{width:252px; margin:15px 0 0 35px}
+div.left_area table{width:232px; margin:15px 0 15px 15px}
+div.left_area table tr td{text-align:left; vertical-align:middle; line-height:38px; font-size:20px;color:#4f4f5b; padding-left:10px;}
+div.left_area table tr td span{color:#0080c8; font-size:24px}
+div.jiegou_list{width:247px; height:338px; border:1px solid #b5b5b5; margin-bottom:12px; background:#fff}
+div.jiegou_list h4{ font-size:24px; margin:20px 0 0 20px; color:#0080c8}
+
+div.center_area{width:1131px; margin:15px  0 0 33px}
+div.map_area{width:1100px; height:678px; border:1px solid #b5b5b5; background:#fff; position:relative; margin-bottom:15px;}
+div.quyu_ditu{position:absolute; right:0; width:312px; text-align:center; padding:20px 0; }
+div.map_shuju{width:320px; height:111px; border:1px solid #b5b5b5; background:#fff; font-size: 20px; margin:25px 20px 0 20px;}
+div.map_shuju h5{margin:10px 0 13px 15px; color:#0080c8}
+div.map_shuju p{text-align:center; margin:0 0 5px 0; line-height:25px; color:#4f4f5b}
+div.map_shuju p span.Goup{ background:url(../images/up.png) no-repeat ; display:inline-block; padding:0 0 0 18px; color:#4f4f5b}
+div.map_shuju p span.Godown{ background:url(../images/down.png) no-repeat; display:inline-block; padding:0 0 0 18px; color:#4f4f5b}
+div.map_shuju p b{ color:#00f6fd; font-size:24px}
+
+div.right_area{width:450px; margin:15px 0 0 0}
+div.sample_box{border:1px solid #b5b5b5; background:#fff; margin-bottom:24px}
+div.sample_box h5{width:100%; height:40px; }
+div.sample_box h5 span{display:inline-block; font-size:24px; color:#ddd; padding:0 0 0 20px; color:#0080c8; margin:9px 0 0 0;}
+
+
+div.page_leftarea{width:1200px; margin:19px 18px 0 25px;}
+div.map_boxes{width:1198px; height:714px; border:1px solid #b5b5b5; background:#fff; margin-bottom:24px}
+div.page_rightarea{margin:19px 0 0 0; width:650px}
+.anchorBL{display:none;}

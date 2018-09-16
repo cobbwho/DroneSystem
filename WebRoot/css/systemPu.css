@@ -1,0 +1,98 @@
+*{margin:0;padding:0;font-size:.95em;font-family:microsoft yahei;outline:0;line-height:0.95em;}
+body{ background:url(../images/BG1.jpg) left top; width:5635px; height:1808px; font-family:microsoft yahei; color:#ddd; overflow:auto}
+textarea{resize:none}
+iframe,img{border:0; margin:0;}
+ul,ol,li{list-style:none}
+a{text-decoration:none}
+table,tr,td{border:0;}
+.Cfff{color:#fff;}
+.fleft{float:left;}
+.fright{float:right}
+.myclear{clear:both}
+.tc{text-align:center}
+.tr{text-align:right}
+
+div.overlay {
+  background: #000;
+  filter: alpha(opacity=50); /* IE的透明度 */
+  opacity: 0.5; /* 透明度 */
+  display:none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 5635px;
+  height: 1808px;
+  z-index: 100; /* 此处的图层要大于页面 */
+  
+  _background-color:#a0a0a0; /* 解决IE6的不透明问题 */
+}
+div.head_area{width:100%; position:relative}
+div.head_area div.fleft img{margin:20px 90px 0 20px}
+div.head_area div.head_left ul  li{float:left;}
+div.head_area div.head_left ul  li a{display:inline-block; width:380px; height:122px; font-size:55px; margin:0 20px 0 0; line-height:122px; color:#fff; text-align:center}
+div.head_area div.head_left ul  li a:link,div.head_area ul  li a:visited{ background:none}
+div.head_area div.head_left ul  li a:hover,div.head_area div.head_left ul  li a.pagenow:link,div.head_area div.head_left ul  li a.pagenow:visited,div.head_area div.head_left ul  li a.pagenow:hover{ background:url(../images/navbg.png) no-repeat left top}
+div.head_area div.fright{margin:40px 295px 0 0; font-size:40px;z-index:2;}
+div.head_area div.fright a:link,div.head_area div.fright a:visited,div.head_area div.fright a:hover{ color:#fff; margin:0 53px}
+div.head_area div.fright a img{vertical-align:top}
+div.head_area div.fright div.js_list001{position:absolute; right:475px; top:85px; width:323px; height:330px; background:#0b2654;display:none;}
+div.head_area div.fright div.js_list001 p a{width:100%;right:475px; top:150px; height:100px; line-height:100px; text-align:center; font-size:48px;}
+div.head_area div.fright div.js_list001 p a:link,div.head_area div.fright div.js_list001 p a:visited{color:#fff}
+div.head_area div.fright div.js_list001 p a:hover{color:#08f0e2;}
+p.h128box{width:100%; height:128px; text-align:right;}
+p.h128box button{border:0; background:url(../images/button_bg01.png); width:559px; height:96px; color:#fff; font-size:40px; margin:20px 80px 0 0; cursor:pointer}
+
+div.maparea{width:2021px; height:1505px; border:2px solid #14548c; margin:0 35px 0 40px; display:inline}
+h5.title_sample{width:100%; height:94px; background:url(../images/title_bg.png) no-repeat left top; color:#fff; font-size:40px;}
+h5.title_sample span{ padding:0 0 0 30px; background:url(../images/title_line02.jpg) no-repeat left center; margin:20px 0 0 30px; display:inline-block; height:59px; line-height:59px; font-weight:normal}
+h5.title_sample a{ position:absolute; right:0}
+div.allmap{position:relative}
+div.map_search{position:absolute; right:50px; top:30px; width:698px; height:88px; background:#00abff; border-radius:10px;}
+div.map_search input,div.sousuort input{ float:left; border:0; background:0; width:575px; height:57px; line-height:57px; color:#fff; font-size:36px; margin:15px 15px 0 30px; display:inline-block;}
+div.map_search button,div.sousuort button{ background:none; border:0; float:left; display:inline-block; margin:10px 0 0 0; cursor:pointer}
+div.videoarea{width:2500px; height:1505px; border:2px solid #14548c; margin-right:26px; display:inline }
+div.timesarea{width:960px; height:722px; border:2px solid #14548c; margin-bottom:63px; display:inline}
+div.montharea{width:960px; height:716px; border:2px solid #14548c; display:inline}
+
+
+div.userlist{position:absolute; z-index:101; left:1546px; top:160px; width:2397px; height:1616px;display:none; background:url(../images/personbg.png) repeat-x top}
+div.sousuolf{margin:10px 0 30px 100px}
+div.sousuolf a{margin-right:60px}
+div.sousuort{width:698px; height:88px; background:#0f58c0; margin:20px 50px 30px 0; border-radius:10px;}
+table.person_name th{background:#123d77; height:77px; font-size:42px; color:#fff;}
+table.person_name td{font-size:36px; color:#fff; text-align:center; padding:29px 0; line-height:50px}
+table.person_name td a{margin:0 30px}
+table.person_name td a:link,table.person_name td a:visited{ color:#fff;}
+table.person_name td a:hover{ color:#0f58c0}
+table.person_name td a:first-child:link,table.person_name td a:first-child:visited{ color:#f86b0e}
+table.person_name td a:first-child:hover{ color:#0f58c0}
+table.person_name td input{width:30px; height:30px; background:#fff; border:1px solid #fff}
+p.endpages{margin:30px auto 0 auto; font-size:36px; text-align:center; color:#fff;}
+p.endpages a{display:inline-block; margin:0 20px}
+p.endpages a:link,p.endpages a:visited{ color:#fff}
+p.endpages a:hover{ color:#f00}
+p.endpages span{margin:0 0 0 60px}
+p.endpages span input{ width:40px; height:40px; background:#515b67; border:0; margin:0 15px}
+p.endpages span button{ padding:0 20px; height:40px; background:#515b67; border:0; color:#fff; margin:0 0 0 30px; cursor:pointer}
+
+table.person_name th a{color:#80ff3e}
+/*table.huo_lists{background:url(../images/trbg.png) repeat;}*/
+table.huo_lists tr td{text-align:center; color:#fff; font-size:36px; padding:10px 0}
+table.huo_lists tr td span{color:#00ffe9}
+table.huo_lists td a:first-child:link,table.huo_lists td a:first-child:visited{ color:#f86b0e}
+table.huo_lists td a:first-child:hover{ color:#fff}
+td.bbg{background:#1e4875}
+
+div.addperson{position:absolute; left:1546px; top:160px; width:2291px; height:1085px; background:url(../images/personbg.png) repeat-x top}
+table.newaperson{margin:50px 0 0 0}
+table.newaperson tr td{vertical-align:top; padding:20px 0; font-size:48px; color:#ced6df; height:100px;}
+table.newaperson tr td input{width:610px; height:96px; border-radius:5px; background:#5e8ac0; border:5px solid #5e8ac0; color:#ced6df;}
+table.newaperson tr td span{margin:0 50px 0 0 }
+table.newaperson tr td span input{width:40px; height:40px; background:0; border:0; margin:0 20px 0 0}
+table.newaperson button{border:0; background:none; margin-top:40px; cursor:pointer}
+table.newaperson tr td a{ padding:10px 25px; border-radius:6px;  margin-right:30px}
+table.newaperson tr td a:link,table.newaperson tr td a:visited{ background:#4872a7; color:#ced6df;}
+table.newaperson tr td a:hover{background:#0f58c0; color:#ced6df;}
+
+table.newaperson tr td textarea{ width:1000px; height:300px; background:#5e8ac0; border-radius:5px; border:5px solid #5e8ac0; color:#ced6df;}
+table.newaperson tr td select{width:610px; height:96px; border-radius:5px; background:#5e8ac0; border:5px solid #5e8ac0; color:#ced6df;}

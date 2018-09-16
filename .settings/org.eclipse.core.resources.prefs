@@ -1,0 +1,20 @@
+#Sun Sep 16 01:54:44 CST 2018
+eclipse.preferences.version=1
+encoding//WebRoot/BaseData/EmployeeRecord/EmpQualificationCX.jsp=GBK
+encoding//WebRoot/BaseData/EmployeeRecord/EmployeeRecordCX.jsp=GBK
+encoding//WebRoot/Inc/JScript/locale/easyui-lang-zh_CN.js=UTF-8
+encoding//WebRoot/Inc/JScript/locale/easyui-lang-zh_TW.js=UTF-8
+encoding//WebRoot/JScript/StatusInfo.js=GBK
+encoding//WebRoot/JScript/json2.js=UTF-8
+encoding//WebRoot/index/index.html=UTF-8
+encoding//WebRoot/index/script/RightMenu.js=UTF-8
+encoding//src/com/droneSystem/servlet/CommissionSheetServlet.java=GBK
+encoding//src/com/droneSystem/servlet/FileServlet.java=GBK
+encoding//src/com/droneSystem/servlet/OriginalRecordServlet.java=GBK
+encoding//src/com/droneSystem/servlet/TaskServlet.java=GBK
+encoding//src/com/droneSystem/servlet/vehicle/LocaleMissionServlet.java=GBK
+encoding//src/com/droneSystem/util/ExcelCompareUtil.java=GBK
+encoding//src/com/droneSystem/util/FlagUtil.java=GBK
+encoding//src/com/droneSystem/util/LetterUtil.java=GBK
+encoding//src/com/droneSystem/util/SysStringUtil.java=GBK
+encoding/<project>=GBK

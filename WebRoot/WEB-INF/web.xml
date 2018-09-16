@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.droneSystem.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>GBK</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>HibernateSessionFilter</filter-name>
+  	<filter-class>com.droneSystem.filter.HibernateSessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>HibernateSessionFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  	
+  </filter-mapping>
+ 
+  <filter>
+	  <filter-name>CheckLoginFilter</filter-name>
+	  <filter-class>com.droneSystem.filter.CheckLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	  <filter-name>CheckLoginFilter</filter-name>
+	  <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+	  <filter-name>CheckLoginFilter</filter-name>
+	  <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>AuthFilter</filter-name>
+  	<filter-class>com.droneSystem.filter.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AuthFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>AuthFilter</filter-name>
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <servlet>
+    <description>用户操作</description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.droneSystem.servlet.user.UserServlet</servlet-class>
+  </servlet>
+  
+
+  
+  
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/servlet/UserServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>部门操作</description>
+    <display-name>DepartmentServlet</display-name>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <servlet-class>com.droneSystem.servlet.DepartmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <url-pattern>/DepartmentServlet.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description>角色操作</description>
+    <display-name>RoleServlet</display-name>
+    <servlet-name>RoleServlet</servlet-name>
+    <servlet-class>com.droneSystem.servlet.RoleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RoleServlet</servlet-name>
+    <url-pattern>/servlet/RoleServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RoleServlet</servlet-name>
+    <url-pattern>/RoleServlet.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <display-name>PrivilegeServlet</display-name>
+  <servlet-name>PrivilegeServlet</servlet-name>
+  <servlet-class>com.droneSystem.servlet.PrivilegeServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>PrivilegeServlet</servlet-name>
+  <url-pattern>/PrivilegeServlet.do</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PrivilegeServlet</servlet-name>
+  <url-pattern>/servlet/PrivilegeServlet.do</url-pattern>
+ </servlet-mapping>
+  
+  <servlet>
+    <description>系统资源管理</description>
+    <display-name>系统资源管理</display-name>
+    <servlet-name>SysResourcesServlet</servlet-name>
+    <servlet-class>com.droneSystem.servlet.SysResourcesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SysResourcesServlet</servlet-name>
+    <url-pattern>/SysResourcesServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<description>菜单生成</description>
+  	<servlet-name>MenuServlet</servlet-name>
+  	<servlet-class>com.droneSystem.servlet.MenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MenuServlet</servlet-name>
+  	<url-pattern>/MenuServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<description>无人机管理</description>
+  	<servlet-name>DroneServlet</servlet-name>
+  	<servlet-class>com.droneSystem.servlet.DroneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DroneServlet</servlet-name>
+  	<url-pattern>/DroneServlet.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<description>地图管理</description>
+  	<servlet-name>HighwayServlet</servlet-name>
+  	<servlet-class>com.droneSystem.servlet.HighwayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HighwayServlet</servlet-name>
+  	<url-pattern>/HighwayServlet.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<description>系统运行参数管理</description>
+  	<servlet-name>SysConfigServlet</servlet-name>
+  	<servlet-class>com.droneSystem.servlet.SysConfigServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SysConfigServlet</servlet-name>
+  	<url-pattern>/SysConfigServlet.do</url-pattern>
+  </servlet-mapping>
+
+
+  
+  
+  <listener>
+	 <listener-class>com.droneSystem.listener.SysContextListener</listener-class>
+  </listener>
+  <listener>
+	 <listener-class>com.droneSystem.listener.SessionListener</listener-class>
+  </listener>
+
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <session-config>
+  	<session-timeout>30</session-timeout>
+  </session-config>
+  <error-page>
+	<error-code>404</error-code>
+	<location>/404.htm</location>
+  </error-page>
+  <error-page>
+	<error-code>500</error-code>
+	<location>/500.htm</location>
+  </error-page>
+  
+  <!-- icon元素包含small-icon和large-icon两个子元素.用来指定web站台中小图标和大图标的路径. -->    
+   <icon>    
+       <!--small-icon元素应指向web站台中某个小图标的路径,大小为16 X 16 pixel,但是图象文件必须为GIF或JPEG格式,扩展名必须为:.gif或.jpg. -->    
+       <small-icon>/images/logo/smallLogo.gif</small-icon>    
+       <!--large-icon元素应指向web站台中某个大图表路径,大小为32 X 32 pixel,但是图象文件必须为GIF或JPEG的格式,扩展名必须为; gif或jpg.-->    
+       <large-icon>/images/logo/largeLogo.gif</large-icon>    
+   </icon> 
+</web-app>

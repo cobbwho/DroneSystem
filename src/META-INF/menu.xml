@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='GBK'?>
+<tree-menu-nodes>
+	<node text="首页">
+		<attributes url="/droneSystem/maps/TrafficVolume.jsp"/>
+	</node>
+	
+	<node text="系统管理" state="closed">
+		<children>
+			
+			<node text="用户管理" state="closed">
+				<children>
+					<node text="角色分配">
+						<attributes url="/droneSystem/UserManage/GrantRole.jsp"/>
+					</node>
+					<node text="密码重置">
+						<attributes url="/droneSystem/UserManage/ResetPassword.jsp"/>
+					</node>
+					<node text="登录设置">
+						<attributes url="/droneSystem/BaseData/EmployeeRecord/LoginConfig.jsp"/>
+					</node>
+					<node text="初始化软件狗">
+						<attributes url="/droneSystem/Dongle/init.jsp"/>
+					</node>
+				</children>
+			</node>	
+			
+			<node text="角色管理" state="closed">
+				<children>
+					<node text="新建角色">
+						<attributes url="/droneSystem/RoleManage/newRole.jsp"/>
+					</node>
+					<node text="角色查询">
+						<attributes url="/droneSystem/RoleManage/SearchRole.jsp"/>
+					</node>
+					<node text="角色分配">
+						<attributes url="/droneSystem/RoleManage/MultiGrantRole.jsp"/>
+					</node>
+					<node text="角色授权">
+						<attributes url="/droneSystem/RoleManage/GrantPrivilege.jsp"/>
+					</node>
+				</children>
+			</node>	
+			
+			<node text="权限管理" state="closed">
+				<children>
+					<node text="新建权限">
+						<attributes url="/droneSystem/PrivilegeManage/AddPrivilege.jsp"/>
+					</node>
+					<node text="权限查询">
+						<attributes url="/droneSystem/PrivilegeManage/SearchPrivilege.jsp"/>
+					</node>
+					<node text="给角色分配权限">
+						<attributes url="/droneSystem/PrivilegeManage/MultiGrantPrivilege.jsp"/>
+					</node>
+				</children>
+			</node>	
+			
+			<node text="系统资源管理" state="closed">
+				<children>
+					<node text="新建系统资源">
+						<attributes url="/droneSystem/ResourcesManage/AddResources.jsp"/>
+					</node>
+					<node text="系统资源管理">
+						<attributes url="/droneSystem/ResourcesManage/SearchResources.jsp"/>
+					</node>
+				</children>
+			</node>	
+			<node text="系统运行参数配置">
+				<attributes url="/droneSystem/SystemManage/SysConfig.jsp"/>
+			</node>
+															
+		</children>
+	</node>
+
+	
+	<node text="业务管理" state="open">
+		<children>
+			<node text="流量信息">
+				<attributes url="/droneSystem/maps/TrafficVolume.jsp"/>
+			</node>
+			<node text="雪阻信息">
+				<attributes url="/droneSystem/maps/SnowVolume.jsp"/>
+			</node>
+			<node text="沙阻信息">
+				<attributes url="/droneSystem/maps/SandVolume.jsp"/>
+			</node>
+			<node text="红外信息">
+				<attributes url="/droneSystem/maps/Infrared.jsp"/>
+			</node>
+			<node text="算法配置">
+				<children>
+					<node text="流量算法配置">
+						<attributes url="/droneSystem/BaseData/AlgorithmConfig.jsp"/>
+					</node>
+					<node text="雪阻算法配置">
+						<attributes url="/droneSystem/BaseData/AlgorithmConfig.jsp"/>
+					</node>
+					<node text="沙阻算法配置">
+						<attributes url="/droneSystem/BaseData/AlgorithmConfig.jsp"/>
+					</node>
+				</children>
+			</node>
+		</children>
+	</node>
+	
+</tree-menu-nodes>
