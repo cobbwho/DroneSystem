@@ -292,11 +292,7 @@
 
 <body >
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="一个角色授予多个用户" />
-		</jsp:include>
-	</DIV>
+
 	<DIV class="droneSystemCenterLayoutDIV">
 
 

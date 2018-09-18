@@ -172,11 +172,7 @@
 
 <body >
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="权限查删改" />
-		</jsp:include>
-	</DIV>
+
 	<DIV class="droneSystemCenterLayoutDIV">
 	<table width="98%" height="90%" border="0">
 		<tr >

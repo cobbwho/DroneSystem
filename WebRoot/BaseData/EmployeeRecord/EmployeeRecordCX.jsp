@@ -1099,11 +1099,6 @@
 <input id="filePath" name="filePath" type="hidden" />
 </form>
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="人员基本信息查询、档案查询管理" />
-		</jsp:include>
-	</DIV>
 	<DIV class="droneSystemCenterLayoutDIV">
 	<div style="width:900px"  region="center">
 		<div>

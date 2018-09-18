@@ -302,11 +302,7 @@
 
 <body>
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="给用户授权角色" />
-		</jsp:include>
-	</DIV>
+
 	<DIV class="droneSystemCenterLayoutDIV">
 <form id="frm_export" method="post" action="/droneSystem/UserServlet.do?method=14">
 <input id="paramsStr" name="paramsStr" type="hidden" />

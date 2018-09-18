@@ -12,7 +12,7 @@
 			com.microsoft.sqlserver.jdbc.SQLServerDriver
 		</property>
 		<property name="connection.username">sa</property>
-		<property name="connection.password">Ynysawmm020495</property>
+		<property name="connection.password">Passw0rd</property>
 		<property name="dialect">
 			org.hibernate.dialect.SQLServerDialect
 		</property>

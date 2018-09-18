@@ -60,15 +60,25 @@
 	<div class="fleft videoarea">
 		<h5 class="title_sample"><span>沙阻视频</span></h5>
 		<div id="video" style="width:2500px;height:1410px">
-			<video id="my-video" class="video-js vjs-default-skin" controls="controls" preload="auto" title="无人机视频"  width="2500px" height="1410px"
+		<div id="video" style="width:2500px;height:1410px">
+<!--			<video id="my-video" class="video-js vjs-default-skin" controls="controls" preload="auto" title="无人机视频"  width="2500px" height="1410px"
 			poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
-			<source src="../maps/MOV_0030.mp4" type="video/mp4">
-				<!-- <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv">-->
+			<source src="../Inc/MOV_0030.MOV" type="video/mp4">
+				 <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv">
 				<p class="vjs-no-js">
-				To view this video please enable JavaScript, and consider upgrading to a web browser that
+					To view this video please enable JavaScript, and consider upgrading to a web browser that
 				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 				</p>
 			</video>
+			-->
+		<object type='application/x-vlc-plugin' id='vlc' events='True' width="2500px" height="1410px" pluginspage="http://www.videolan.org" codebase="http://downloads.videolan.org/pub/videolan/vlc-webplugins/2.0.6/npapi-vlc-2.0.6.tar.xz">
+        <param name='mrl' value='../Inc/SZ.mp4' />
+        <param name='volume' value='50' />
+        <param name='autoplay' value='true' />
+        <param name='loop' value='false' />
+        <param name='fullscreen' value='false' />
+    </object>
+		</div>
 		</div>
 	</div>
 	
@@ -474,7 +484,7 @@
      function getEcharts(){
           app.timeTicket = setInterval(function (){
 		  var url = '/droneSystem/DroneServlet.do?method=6';
-		  var paramData={type:1};
+		  var paramData={type:2};
 		  $.ajax({
 		      url: url,
 		      type: 'post',
@@ -513,7 +523,7 @@
            	cache: false, 
            	dataType: 'json',
            	url: '/droneSystem/DroneServlet.do?method=3',
-           	data:{type:3,inputStream:"D:\\test\\LL.mp4"},
+           	data:{type:2,inputStream:"D:\\test\\SZ.mp4"},
             success: function(data){
             //alert(321);
          		videoId = data.videoId;
@@ -528,7 +538,7 @@
                	cache: false, 
              	dataType: 'json',
              	url: '/droneSystem/DroneServlet.do?method=5',
-             	data:{type:3},
+             	data:{type:2},
             	success: function(data){
             		//alert(data.ts);
 					timer ++;
@@ -544,7 +554,7 @@
 			cache: false, 
 			dataType: 'json',
 			url: '/droneSystem/DroneServlet.do?method=6',
-			data:{type:3,videoId:videoId},
+			data:{type:2,videoId:videoId},
 			success: function(data){
 			//alert(videoId);
             //alert(videoId + data.ts);

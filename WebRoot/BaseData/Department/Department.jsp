@@ -46,11 +46,7 @@
 
 <body>
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="部门详细信息录入" />
-		</jsp:include>
-	</DIV>
+
 	<DIV class="droneSystemCenterLayoutDIV">
 
 		 <div style="+position:relative;"> 

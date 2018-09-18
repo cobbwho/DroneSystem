@@ -292,11 +292,7 @@
 <body >
 
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="¸ø½ÇÉ«ÊÚÈ¨" />
-		</jsp:include>
-	</DIV>
+
 	<DIV class="droneSystemCenterLayoutDIV">
 
 <div border="true" style="width:900px;overflow:hidden;+position:relative;">

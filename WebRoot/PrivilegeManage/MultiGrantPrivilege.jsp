@@ -270,11 +270,6 @@
 
 <body  >
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="将一个权限赋给多个角色" />
-		</jsp:include>
-	</DIV>
 	<DIV class="droneSystemCenterLayoutDIV">
 
 <div border="true" style="width:900px;overflow:hidden;+position:relative;">

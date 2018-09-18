@@ -64,11 +64,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <body >
   
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="新建权限" />
-		</jsp:include>
-	</DIV>
 	<DIV class="droneSystemCenterLayoutDIV">
 	     
          <div  align="center" >

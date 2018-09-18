@@ -223,7 +223,7 @@ $(function(){
     ]
 };
 
-app.count = 11;
+//app.count = 11;
 setInterval(function (){
     axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
 
@@ -236,8 +236,8 @@ setInterval(function (){
 
     option2.xAxis[0].data.shift();
     option2.xAxis[0].data.push(axisData);
-    option2.xAxis[1].data.shift();
-    option2.xAxis[1].data.push(app.count++);
+    //option2.xAxis[1].data.shift();
+    //option2.xAxis[1].data.push(app.count++);
 
     myChart2.setOption(option2);
     
@@ -247,10 +247,5 @@ setInterval(function (){
     window.onresize = myChart2.resize();
 }, 2100);
 
-	
-	
-	
-
-	
 	   
-})
+});

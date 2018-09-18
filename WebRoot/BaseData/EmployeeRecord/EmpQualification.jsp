@@ -334,11 +334,6 @@
 <input id="filePath" name="filePath" type="hidden" />
 </form>
 <DIV class="droneSystemMainLayoutDiv">
-	<DIV class="droneSystemTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="检验人员资质信息管理" />
-		</jsp:include>
-	</DIV>
 <DIV class="droneSystemCenterLayoutDIV">
 	<div style="width:900px" region="center">
     	<div>

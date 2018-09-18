@@ -124,11 +124,6 @@
 
 <body>
 <DIV class="JlywMainLayoutDiv">
-	<DIV class="JlywTopLayoutDIV">
-		<jsp:include page="/Common/Title.jsp" flush="true">
-			<jsp:param name="TitleName" value="高速公路管理" />
-		</jsp:include>
-	</DIV>
 	<DIV class="JlywCenterLayoutDIV">
 	<div style="width:900px"  region="center">
 		
