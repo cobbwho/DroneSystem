@@ -9,14 +9,14 @@
 <script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="../Inc/Style/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="../Inc/Style/Style.css" />
-<link rel="stylesheet" type="text/css" href="../Inc/Style/video-js.css" >
+<link rel="stylesheet" type="text/css" href="../Inc/Style/video-js.css" />
 <script type="text/javascript" src="../Inc/JScript/jquery-1.6.min.js"></script>
 <script type="text/javascript" src="../Inc/JScript/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../Inc/JScript/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JScript/upload.js"></script>
 <script type="text/javascript" src="../JScript/admin.js"></script>
 <script type="text/javascript" src="../JScript/map.js"></script>
-<script type="text/javascript" src="../JScript/chart1.js"></script>
+<!-- <script type="text/javascript" src="../JScript/chart1.js"></script> -->
 <script type="text/javascript" src="../JScript/chart2.js"></script>
 <script type="text/javascript" src="../JScript/json2.js"></script>
 <script type="text/javascript" src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>
@@ -38,7 +38,7 @@
 		</ul>
 		</div>
 		<div class="fright">
-		 <a id="drop_down" href="javascript:void(0)">admin<img src="../images/down_sanjiao.png" /></a><a id="logout" href="javascript:void(0)" onclick="doLogout()"><img src="../images/lines10.png" />退出</a>
+		 <a id="drop_down" href="javascript:void(0)" style="margin-right:29px">admin<img src="../images/down_sanjiao.png" /></a><a id="logout" href="javascript:void(0)" onclick="doLogout()" style="margin-left:0px"><img src="../images/lines10.png" />退出</a>
 		 <div class="js_list001" id="drop_list">
 			<p id="p1"><a href="#">用户列表</a></p>
 			<p id="p2"><a href="#">角色列表</a></p>
@@ -72,9 +72,9 @@
 			</video>
 			-->
 		<object type='application/x-vlc-plugin' id='vlc' events='True' width="2500px" height="1410px" pluginspage="http://www.videolan.org" codebase="http://downloads.videolan.org/pub/videolan/vlc-webplugins/2.0.6/npapi-vlc-2.0.6.tar.xz">
-        <param name='mrl' value='../Inc/SZ.mp4' />
+        <param name='mrl' value='rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov' />
         <param name='volume' value='50' />
-        <param name='autoplay' value='true' />
+        <param name='autoplay' value='false' />
         <param name='loop' value='false' />
         <param name='fullscreen' value='false' />
     </object>
@@ -93,7 +93,7 @@
 	<div class="myclear"></div>
 	
 	<!--弹框001-->
-	<div class="userlist">
+	<div class="userlist" id="userlist">
 		<h5 class="title_sample"><span>用户列表</span><a id="userlist_close" href="javascript:void(0)" onclick="closeUserlist()"><img src="../images/cross.png" /></a></h5>
 		<div class="fleft sousuolf"><a href="#"><img src="../images/addperson.png" /></a><a href="#"><img src="../images/delectperson.png" /></a></div>
 		<div class="fright sousuort"><input type="text" /><button><img src="../images/searchicon.png" /></button></div>
@@ -394,6 +394,195 @@
 		<p class="endpages"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">...</a><a href="#">49</a><a href="#">下一页</a><span>到第<input type="text" />页<button>确定</button></span></p>
 	</div>
 	<!--弹框003结束-->
+	<!--弹框004-->
+	<div class="userlist" id="rescueplanlist">
+		<h5 class="title_sample"><span>当前为Ⅲ级应急响应资源配置方案</span><a href="#"><img src="../images/cross.png" /></a></h5>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="person_name">
+		  <tr>
+			<th align="center" width="10%" style="height:145px">类型</th>
+			<th align="left" width="14%">图片</th>
+			<th align="center" width="14%">名称</th>
+			<th align="center" width="12%">单位</th>
+			<th align="center" width="14%">高效型方案</th>
+			<th align="center" width="14%">均衡型方案</th>
+			<th align="center" width="14%">经济型方案</th>
+			<th align="center" width="8%"><a href="#">提交</a></th>
+		  </tr>
+		</table>
+		<div style=" height:1280px; overflow-y:auto">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="huo_lists">
+			  <tr>
+				<td width="10%" rowspan="3" valign="top">除雪物资</td>
+				<td width="14%" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td width="14%">无机融雪剂</td>
+				<td width="12%">T/百公里</td>
+				<td width="14%"><span>50</span></td>
+				<td width="14%"><span>40</span></td>
+				<td width="14%"><span>30</span></td>
+				<td width="8%"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			   <tr>
+				<td rowspan="3" valign="top">除雪物资</td>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			   <tr>
+				<td rowspan="3" valign="top">除雪物资</td>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			   <tr>
+				<td rowspan="3" valign="top">除雪物资</td>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td rowspan="3" valign="top">除雪物资</td>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			 <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td rowspan="3" valign="top">除雪物资</td>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td>无机融雪剂</td>
+				<td>T/百公里</td>
+				<td><span>50</span></td>
+				<td><span>40</span></td>
+				<td><span>30</span></td>
+				<td><a href="#">编辑</a></td>
+			  </tr>
+			 <tr>
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">无机融雪剂</td>
+				<td class="bbg">T/百公里</td>
+				<td class="bbg"><span>50</span></td>
+				<td class="bbg"><span>40</span></td>
+				<td class="bbg"><span>30</span></td>
+				<td class="bbg"><a href="#">编辑</a></td>
+			  </tr>
+			</table>
+		</div>
+	</div>
+	<!--弹框004结束-->
 </body>
 </html>	
 
@@ -402,10 +591,177 @@
     var map = new BMap.Map("allmap");
     var timer=1;
 	var videoId = 0;
-	var axisData;
+	 var myChart1 = echarts.init(document.getElementById('echarts1'),'blue');   
+		var now = new Date();
+		var len = 10;
+		var res = [];
+		while (len--) {
+		res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+		    now = new Date(now - 2000);
+		}
+		var res1 = [];
+		//var res2 = [];
+		var len = 10;
+		while (len--) {
+		    res1.push(0);
+		  
+		}
+		var xAxisData = res; //x轴数据
+		var yAxisData = res1; //y轴数据
+
+	
+	// 指定图表的配置项和数据
+	var option1 = {
+			title : {
+			    text: '',
+			    textstyle:{
+			    	"fontSize":"20",
+		            "fontWeight": "bolder"
+		    },
+			},
+			tooltip : {
+			    trigger: 'axis', 
+		        axisPointer: {
+		            type: 'cross',
+		            label: {
+		            //    backgroundColor: 'F2F2F2'
+		            }
+		        }
+			 },
+		    legend: {
+		        data:['沙阻量'],
+		        textStyle: {  
+		            color: '#fff',          //legend字体颜色 
+		            fontSize:'22'
+
+		        }
+		    },
+		    toolbox: {
+		        show : true,
+		        feature : {
+		            dataView : {show: true, readOnly: false},
+		           // magicType : {show: true,  type:['line', 'bar']},
+		            restore : {show: true},
+		            saveAsImage : {show: true}
+		        },
+		        
+	            itemSize:'22',
+	            emphasis:{//触发时
+	                iconStyle:{
+	                    borderColor:"white"//图形的描边颜色
+	                }
+	            }
+
+		    },
+		    dataZoom : {
+		        show : false,
+		        start : 0,
+		        end : 100
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            axisLabel: {        
+		                show: true,
+		                textStyle: {
+		                    color: '#fff',
+		                    fontSize:'20'
+		                }
+		            },
+		        // 控制网格线是否显示
+			        splitLine: {
+			                show: false, 
+			                //  改变轴线颜色
+			                lineStyle: {
+			                    // 使用深浅的间隔色
+			                    color: ['white']
+			                }                            
+			        },
+		            axisLine:{
+		                lineStyle:{
+		                    color:'#FFFFFF',
+		                    width:1
+		                }
+		            },
+		            axisPointer: {
+	                type: 'shadow'
+	                },
+
+		            boundaryGap : true,
+		            data:xAxisData
+		        },
+		         {
+		            type: 'category',
+		            boundaryGap: true,
+		            data: (function (){
+		                var res = [];
+		                var len = 10;
+		                while (len--) {
+		                    res.push(10 - len - 1);
+		                }
+		                return res;
+		            })()
+		        }
+		   ],
+		   yAxis : [
+		      {
+		           type : 'value',
+		           scale: true,
+		           name : '沙阻量M^2',
+		           axisLabel: {        
+		                show: true,
+		                textStyle: {
+		                    color: '#fff',
+		                    fontSize:'20'
+		                }
+		            },
+		        // 控制网格线是否显示
+			        splitLine: {
+			                show: false, 
+			                //  改变轴线颜色
+			                lineStyle: {
+			                    // 使用深浅的间隔色
+			                    color: ['white']
+			                }                            
+			        },
+			        max: 1200,
+           			min: 0,
+		           boundaryGap: [0.2, 0.2],
+		           
+		      }
+		  ],
+		  series : [
+		       {
+		            name:"沙阻量",
+		            type:'bar',
+		            //stack:'one',
+		            data:yAxisData,
+		            markPoint : {
+			                data : [
+			                    {type : 'max', name: '最大值'},
+			                    {type : 'min', name: '最小值'}
+			                ]
+			            },
+			            markLine : {
+			                data : [
+			                    {type : 'average', name: '平均值'}
+			                ]
+			            }		            
+		       }		       
+		  ]
+		};
+
+    var axisData;
 	var lastData = 0;
 	clearInterval(app);
 	var app = {};
+	app.count = 11;
+	myChart1.setOption(option1);
+    $(window).resize(function(){
+       myChart1.resize();
+    });
+    window.onresize = myChart1.resize();
+	
     var opts = {
 		width : 0,     // 信息窗口宽度
 		height: 0,     // 信息窗口高度
@@ -457,13 +813,68 @@
 			            //map.panTo(point);		            
 						showInfo(this, thepoint);//开启信息窗口
 						test();
-						videojs("my-video").ready(function(){
+						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
 							myPlayer.play();
-						});
+						}); */
 						getEcharts();
 			            });
-		            })();		            		           		
+		            })();
+		            		            		           		
+				function showInfo(thisMarker,point){
+			         //thisMarker.setAnimation(BMAP_ANIMATION_BOUNCE);
+			         var content = 
+					"<p style='margin:0;line-height:1.5;font-size:20px;text-indent:0em'>无人机编号： "+point.code+"<br/>经度："+point.longitude+" 纬度："+point.latitude+"</br>雪阻预警等级： 2</br>状态： 0</p>";
+					 var infoWindow = new BMap.InfoWindow(content, opts);
+					 thisMarker.openInfoWindow(infoWindow);
+			       }	
+			       function getEcharts(){
+				          app.timeTicket = setInterval(function (){
+						  var url = '/droneSystem/DroneServlet.do?method=6';
+						  var paramData={type:3,videoId:5};
+						  $.ajax({
+						      url: url,
+						      type: 'post',
+						      data: paramData,
+						      dataType: 'json',
+						      cache: false,
+						      error:function(){
+						          console.log("get redis error!!!");
+						      },
+						      success: function(data){
+						          if(data != null){
+						          
+						          //lastData = data.ts;
+						          lastData = Math.round(Math.random() * 1000);
+						        
+						          }
+						      }
+						  }); 
+
+						    axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+						    var data0 = option1.series[0].data;
+						    //var data1 = option1.series[1].data;
+						    data0.shift();
+						    data0.push(Math.round(Math.random() * 1000));
+						    //data1.shift();
+						    //data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+						    option1.xAxis[0].data.shift();
+				    		option1.xAxis[0].data.push(axisData);
+				    		option1.xAxis[1].data.shift();
+                            option1.xAxis[1].data.push(app.count++);				    		
+				    		myChart1.setOption(option1);
+						  // 动态数据接口 addData
+					      /* myChart1.addData([
+					        [
+					            0,        // 系列索引
+					            lastData, // 新增数据
+					            false,     // 新增数据是否从队列头部插入
+					            false,    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+					            axisData //横轴数据
+					        ]		       
+						  ]); */
+						}, 3000);
+				     }            		           		
 				}	
 		}	
 		}); 	
@@ -471,52 +882,6 @@
 	}
 	
 	
-	
-	 function showInfo(thisMarker,point){
-         //thisMarker.setAnimation(BMAP_ANIMATION_BOUNCE);
-         var content = 
-		"<p style='margin:0;line-height:1.5;font-size:20px;text-indent:0em'>无人机编号： "+point.code+"<br/>经度："+point.longitude+" 纬度："+point.latitude+"</br>雪阻预警等级： 2</br>状态： 0</p>";
-		 var infoWindow = new BMap.InfoWindow(content, opts);
-		 thisMarker.openInfoWindow(infoWindow);
-     }
-     
-           
-     function getEcharts(){
-          app.timeTicket = setInterval(function (){
-		  var url = '/droneSystem/DroneServlet.do?method=6';
-		  var paramData={type:2};
-		  $.ajax({
-		      url: url,
-		      type: 'post',
-		      data: paramData,
-		      dataType: 'json',
-		      cache: false,
-		      error:function(){
-		          console.log("get redis error!!!");
-		      },
-		      success: function(data){
-		          if(data != null){
-		          //alert(data.ts);
-		          axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
-		          lastData = data.ts;
-		          //lastData = Math.round(Math.random() * 1000);
-		        
-		          }
-		      }
-		  }); 
-		  // 动态数据接口 addData
-	      myChart.addData([
-	        [
-	            0,        // 系列索引
-	            lastData, // 新增数据
-	            false,     // 新增数据是否从队列头部插入
-	            false,    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-	            axisData //横轴数据
-	        ]		       
-		  ]);
-		}, 2000);
-     }
-     
 	 function test(){
 	  $.ajax({
        	 	type: "post", 

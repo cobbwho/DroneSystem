@@ -1,5 +1,5 @@
 $(function(){	
-	var myChart1 = echarts.init(document.getElementById('echarts1'));
+	var myChart2 = echarts.init(document.getElementById('echarts2'),'blue');
 	var now = new Date();
 	var len = 10;
 	var res = [];
@@ -18,143 +18,185 @@ $(function(){
 	var yAxisData = res1; //y轴数据
 	
 	// 指定图表的配置项和数据
-	var option1 = {
-	title : {
-	    text: '流量变化情况'
-	},
-	tooltip : {
-	    trigger: 'axis'
-	    },
-	    legend: {
-	        data:['车流量']
-	    },
-	    toolbox: {
-	        show : true,
-	        feature : {
-	            dataView : {show: true, readOnly: false},
-	            magicType : {show: true, type: ['line', 'bar']},
-	            restore : {show: true},
-	            saveAsImage : {show: true}
-	        }
-	    },
-	    dataZoom : {
-	        show : false,
-	        start : 0,
-	        end : 100
-	    },
-	    xAxis : [
-	        {
-	            type : 'category',
-	            boundaryGap : true,
-	            data:xAxisData
-	        }
-	   ],
-	   yAxis : [
-	      {
-	           type : 'value',
-	           scale: true,
-	           name : '车流量V/h',
-	           boundaryGap: [0.2, 0.2]
-	      }
-	  ],
-	  series : [
-	       {
-	            name:'车流量',
-	            type:'line',
-	            lineStyle: {
-	            normal: {
-	              //color: '#4F2F4F',
-	              width: 2
-	              //type: solid
-	            },
-	            },
-	            data:yAxisData,
-	            markPoint : {
-		                data : [
-		                    {type : 'max', name: '最大值'},
-		                    {type : 'min', name: '最小值'}
-		                ]
-		            },
-		            markLine : {
-		                data : [
-		                    {type : 'average', name: '平均值'}
-		                ]
-		            }
-	            
-	       }
-	  ]
-	};
 	
 	var option2 = {
-			title : {
-			    text: '流量变化情况'
-			},
-			tooltip : {
-			        trigger: 'axis'
-			    },
-			    legend: {
-			        data:['车流量']
-			    },
-			    toolbox: {
-			        show : true,
-			        feature : {
-			            dataView : {show: true, readOnly: false},
-			            magicType : {show: true, type: ['line', 'bar']},
-			            restore : {show: true},
-			            saveAsImage : {show: true}
-			        }
-			    },
-			    dataZoom : {
-			        show : false,
-			        start : 0,
-			        end : 100
-			    },
-			    xAxis : [
-			        {
-			            type : 'category',
-			            boundaryGap : true,
-			            data:xAxisData
-			        }
-			   ],
-			   yAxis : [
-			      {
-			           type : 'value',
-			           scale: true,
-			           name : '车流量V/h',
-			           boundaryGap: [0.2, 0.2]
-			      }
-			  ],
-			  series : [
-			       {
-			            name:'车流量',
-			            type:'line',
-			            lineStyle: {
-			            normal: {
-			              //color: '#4F2F4F',
-			              width: 2
-			              //type: solid
-			            },
-			            },
-			            data:yAxisData,
-			            markPoint : {
-				                data : [
-				                    {type : 'max', name: '最大值'},
-				                    {type : 'min', name: '最小值'}
-				                ]
-				            },
-				            markLine : {
-				                data : [
-				                    {type : 'average', name: '平均值'}
-				                ]
-				            }
-			            
-			       }
-			  ]
-			};
-	
-	
-	myChart1.setOption(option1);
+	title: {
+        text: '',   
+        textstyle:{
+            fontWeight: 'normal',              //标题颜色
+            color: 'FFFFFF',
+            fontSize:'25'
+    }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+            //    backgroundColor: 'F2F2F2'
+            }
+        }
+    },
+    legend: {
+        data:['每分钟雪阻量总和'],
+        textStyle: {  
+            color: '#fff',          //legend字体颜色 
+            fontSize:'22'
 
-	
+        }
+
+      
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataView: {readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        },
+        itemSize:'22',
+        emphasis:{//触发时
+            iconStyle:{
+                borderColor:"white"//图形的描边颜色
+            }
+        }
+    },
+    dataZoom: {
+        show: true,
+        start: 0,
+        end: 100
+    },
+    xAxis: [
+        {
+            type: 'category',
+            axisLabel: {        
+                show: true,
+                textStyle: {
+                    color: '#fff',
+                    fontSize:'20'
+                }
+            },
+        // 控制网格线是否显示
+	        splitLine: {
+	                show: false, 
+	                //  改变轴线颜色
+	                lineStyle: {
+	                    // 使用深浅的间隔色
+	                    color: ['white']
+	                }                            
+	        },
+            axisLine:{
+                lineStyle:{
+                    color:'#FFFFFF',
+                    width:2
+                }
+            },
+
+
+            boundaryGap: true,
+            data: (function (){
+                var now = new Date();
+                var res = [];
+                var len = 10;
+                while (len--) {
+                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                    now = new Date(now - 2000);
+                }
+                return res;
+            })()
+        },
+        {
+            type: 'category',
+            boundaryGap: true,
+            data: (function (){
+                var res = [];
+                var len = 10;
+                while (len--) {
+                    res.push(10 - len - 1);
+                }
+                return res;
+            })()
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            scale: true,
+            name: '雪阻量M',
+            axisLabel: {        
+                show: true,
+                textStyle: {
+                    color: '#fff',
+                    fontSize:'20'
+                }
+            },
+            // 控制网格线是否显示
+            splitLine: {
+                    show: false, 
+                    //  改变轴线颜色
+                    lineStyle: {
+                        // 使用深浅的间隔色
+                        color: ['white']
+                    }                            
+            },
+            max: 30,
+            min: 0,
+            boundaryGap: [0.2, 0.2]
+        }
+    ],
+    series: [
+        {
+            name:'每分钟雪阻量总和',
+            type:'line',
+            xAxisIndex: 1,
+            yAxisIndex: 1,   
+            data:(function (){
+                var res = [];
+                var len = 10;
+                while (len--) {
+                    res.push(Math.round(Math.random() * 1000));
+                }
+                return res;
+            })(),
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }       
+        }
+    ]
+};
+
+app.count = 11;
+setInterval(function (){
+    axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+    var data0 = option2.series[0].data;
+    //var data1 = option2.series[1].data;
+    data0.shift();
+    data0.push(Math.round(Math.random() * 1000));
+    //data1.shift();
+    //data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+    option2.xAxis[0].data.shift();
+    option2.xAxis[0].data.push(axisData);
+    option2.xAxis[1].data.shift();
+    option2.xAxis[1].data.push(app.count++);
+
+    myChart2.setOption(option2);
+    
+    $(window).resize(function(){
+        myChart2.resize();
+    });
+    window.onresize = myChart2.resize();
+}, 2100);
+
 	   
-})
+});

@@ -26,8 +26,7 @@ $(function(){
             fontWeight: 'normal',              //±ÍÃ‚—’…´
             color: 'FFFFFF',
             fontSize:'25'
-    },
-
+    }
     },
     tooltip: {
         trigger: 'axis',
@@ -52,6 +51,7 @@ $(function(){
         show: true,
         feature: {
             dataView: {readOnly: false},
+           // magicType : {show: true, type: ['line', 'bar']},
             restore: {},
             saveAsImage: {}
         },
@@ -63,7 +63,7 @@ $(function(){
         }
     },
     dataZoom: {
-        show: false,
+        show: true,
         start: 0,
         end: 100
     },
@@ -223,7 +223,7 @@ $(function(){
     ]
 };
 
-//app.count = 11;
+app.count = 11;
 setInterval(function (){
     axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
 
@@ -236,8 +236,8 @@ setInterval(function (){
 
     option2.xAxis[0].data.shift();
     option2.xAxis[0].data.push(axisData);
-    //option2.xAxis[1].data.shift();
-    //option2.xAxis[1].data.push(app.count++);
+    option2.xAxis[1].data.shift();
+    option2.xAxis[1].data.push(app.count++);
 
     myChart2.setOption(option2);
     

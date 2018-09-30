@@ -1,9 +1,9 @@
 $(function(){
     showDate();
-    $("#drop_down,#drop_list").mouseover(function(){//鼠标移动到select栏中的操作
-        $(".js_list001").show();//使下拉的option选项show出来                
+    $("#drop_down,#drop_list").mouseover(function(){
+        $(".js_list001").show();         
     });
-    $("#drop_down,#drop_list").mouseout(function(){//鼠标移开后select的行为
+    $("#drop_down,#drop_list").mouseout(function(){
          $(".js_list001").hide();        
     });
     
@@ -11,27 +11,16 @@ $(function(){
     	
     	 if($(".userlist").css("display")=="none"){
     	        $("#userlist").slideToggle("slow");
-    	      
+    	        $("#video").hide();
     	    }
-    	 $(".overlay").height(document.body.scrollHeight);
-    	 $(".overlay").width(document.body.scrollWidth);
-    	 console.log(document.body.scrollWidth);
-    	  // fadeTo第一个参数为速度，第二个为透明度
-    	  // 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
-    	  $(".overlay").fadeTo(200, 0.5);
-    	  // 解决窗口缩小时放大后不全屏遮罩的问题
-    	  // 简单来说，就是窗口重置的问题
-    	  $(window).resize(function(){
-    	    $(".overlay").height(document.body.scrollHeight);
-    	    $(".overlay").width(document.body.scrollWidth);
-    	  });
+    	 showBg();
     	 closewindow();
     });  
     
     $("#p2").click(function(){
    	 if($(".userlist").css("display")=="none"){
    	        $("#rolelist").slideToggle("slow");
-   	        
+   	        $("#video").hide();
    	    } 
    	showBg();
    	closewindow();
@@ -40,25 +29,22 @@ $(function(){
     $("#p3").click(function(){
       	 if($(".userlist").css("display")=="none"){
       	        $("#privilegelist").slideToggle("slow");
-      	     
+      	        $("#video").hide();
       	    }
-      	$(".overlay").height(document.body.scrollHeight);
-   	 $(".overlay").width(document.body.scrollWidth);
-   	 console.log(document.body.scrollWidth);
-   	  // fadeTo第一个参数为速度，第二个为透明度
-   	  // 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
-   	  $(".overlay").fadeTo(200, 0.5);
-   	  // 解决窗口缩小时放大后不全屏遮罩的问题
-   	  // 简单来说，就是窗口重置的问题
-   	  $(window).resize(function(){
-   	    $(".overlay").height(document.body.scrollHeight);
-   	    $(".overlay").width(document.body.scrollWidth);
-   	  });
-   	 closewindow();
-      	 
+      	showBg();
+      	closewindow();     	 
     }); 
+    
+    $(".h128box").children("button").click(function(){
+    	if($(".userlist").css("display")=="none"){
+  	        $("#rescueplanlist").slideToggle("slow");
+  	        $("#video").hide();
+  	    }
+    	showBg();
+    	closewindow();
+    });
    
- })
+ });
  
  function closewindow()
 {	
@@ -66,17 +52,18 @@ $(function(){
 	        
          $(this).parent().parent().parent().hide("slow");
          $(".overlay").fadeOut(200);
+         $("#video").show();
  });
 }
 
 function showBg(){
-	var bh=$("body").height();
-	var bw=$("body").width();
-	$(".overlay").css({
-		height:bh,
-		width:bw,
-		display:"block",
-	});
+	$(".overlay").height(document.body.scrollHeight);
+  	 $(".overlay").width(document.body.scrollWidth);	
+  	  $(".overlay").fadeTo(200, 0.5);
+  	  $(window).resize(function(){
+  	    $(".overlay").height(document.body.scrollHeight);
+  	    $(".overlay").width(document.body.scrollWidth);
+  	  });
 }
 function ale(){
 	alert("该页面暂时未开放！");
