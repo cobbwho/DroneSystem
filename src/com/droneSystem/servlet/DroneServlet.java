@@ -329,7 +329,7 @@ public class DroneServlet extends HttpServlet {
 			JSONObject res6 = new JSONObject();
 			try {
 				String droneId = req.getParameter("droneId");
-				Drone drone = droneMgr.findById(1);
+				Drone drone = droneMgr.findById(Integer.parseInt(droneId));
 				String type = req.getParameter("type");
 				List<Video> videos =  vMgr.findByVarProperty(new KeyValueWithOperator("drone", drone, "="));
 				Video video = videos.get(videos.size()-1);
@@ -382,7 +382,7 @@ public class DroneServlet extends HttpServlet {
 			JSONObject res7 = new JSONObject();
 			try {
 				String droneId = req.getParameter("droneId");
-				Drone drone = droneMgr.findById(1);
+				Drone drone = droneMgr.findById(Integer.parseInt(droneId));
 				List<Video> videos =  vMgr.findByVarProperty(new KeyValueWithOperator("drone", drone, "="));
 				Video video = videos.get(videos.size()-1);
 				List<CarNum> carNums = carNumMgr.findByVarProperty(new KeyValueWithOperator("video", video, "="));
