@@ -852,14 +852,16 @@
 			                  fontWeight :"bold" //字体加粗
 		                 });
 		            marker.setLabel(label);  //添加标签
-		            
 		            (function(){
+		             	var droneId = data.drones[i].droneId;
 			            var thepoint = data.drones[i]; 
+			           
 			            marker.addEventListener("click", function (){
 			            //map.panTo(point);		            
 						showInfo(this, thepoint);//开启信息窗口
-						test();
-						getEcharts();
+//						test(droneId);
+						
+						getEcharts(droneId);
 						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
 							myPlayer.play();
@@ -875,10 +877,10 @@
 					 var infoWindow = new BMap.InfoWindow(content, opts);
 					 thisMarker.openInfoWindow(infoWindow);
 			       }	
-			       function getEcharts(){
+			       function getEcharts(droneId){
 				          app.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=6';
-						  var paramData={type:3,videoId:5};
+						  var paramData={type:3,droneId:droneId};
 						  $.ajax({
 						      url: url,
 						      type: 'post',
@@ -930,13 +932,13 @@
          
      
      
-	 function test(){
+	 function test(droneId){
 	  $.ajax({
        	 	type: "post", 
            	cache: false, 
            	dataType: 'json',
            	url: '/droneSystem/DroneServlet.do?method=3',
-           	data:{type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
+           	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
             success: function(data){
             //alert(321);
          		videoId = data.videoId;

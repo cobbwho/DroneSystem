@@ -109,22 +109,7 @@ public class UserServlet extends HttpServlet {
 					list.add("%" + userJobTitleStr + "%");
 					queryStr = queryStr + "and model.jobTitle like ? ";
 				}
-				if(queryDepartment != null&&!queryDepartment.equals(""))
-				{
-					String userDepartmentStr = URLDecoder.decode(queryDepartment, "UTF-8");
-					list.add(LetterUtil.isNumeric(userDepartmentStr)?Integer.valueOf(userDepartmentStr):0);
-					list.add("%" + userDepartmentStr + "%");
-					list.add("%" + userDepartmentStr + "%");
-					queryStr = queryStr + "and model.projectTeamId in (select model1.id from ProjectTeam as model1 where model1.department.id = ? or model1.department.name like ? or model1.department.brief like ?) ";
-				}
-				if(queryProjectTeam != null&&!queryProjectTeam.equals(""))
-				{
-					String userProjectTeamStr = URLDecoder.decode(queryProjectTeam, "UTF-8");
-					list.add(LetterUtil.isNumeric(userProjectTeamStr)?Integer.valueOf(userProjectTeamStr):0);
-					list.add("%" + userProjectTeamStr + "%");
-					list.add("%" + userProjectTeamStr + "%");
-					queryStr = queryStr + "and (model.projectTeamId = ? or model.projectTeamId in (select model2.id from ProjectTeam as model2 where model2.name like ? or model2.brief like ?)) ";
-				}
+				
 				if(queryStatus != null&&!queryStatus.equals(""))
 				{
 					String userStatusStr = URLDecoder.decode(queryStatus, "UTF-8");

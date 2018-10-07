@@ -38,6 +38,7 @@
 		<mapping resource="com/droneSystem/hibernate/SnowVolume.hbm.xml" />
  		<mapping resource="com/droneSystem/hibernate/TrafficFlow.hbm.xml" /> 
  		<mapping resource="com/droneSystem/hibernate/RescuePlan.hbm.xml" /> 
+ 		<mapping resource="com/droneSystem/hibernate/Record.hbm.xml" /> 
 	</session-factory>
 
 </hibernate-configuration>

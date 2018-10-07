@@ -16,7 +16,6 @@
    <unvalidatedurls-servlet>
    		<unvalidatedurl url="servlet/UserServlet.do?method=4"/>
    		<unvalidatedurl url="servlet/UserServlet.do?method=5"/>
-   		<unvalidatedurl url="HeartBeatServlet.do"/>
    		<unvalidatedurl url="FileServlet.do"></unvalidatedurl>
    </unvalidatedurls-servlet>
 </Config>

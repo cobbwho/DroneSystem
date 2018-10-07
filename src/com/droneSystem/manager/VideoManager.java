@@ -8,6 +8,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 
+import com.droneSystem.hibernate.Drone;
 import com.droneSystem.hibernate.Video;
 import com.droneSystem.hibernate.VideoDAO;
 import com.droneSystem.util.KeyValueWithOperator;
@@ -24,7 +25,15 @@ public class VideoManager {
 	public Video findById(int id) {
 		return m_dao.findById(id);
 	}
-
+	
+	/**
+	 * 根据Video Id 查找 Video对象
+	 * @param id Video Id
+	 * @return Video对象
+	 */
+	public List findByDrone(Drone drone) {
+		return m_dao.findByDrone(drone);
+	}
 	/**
 	 * 插入一条Video记录
 	 * @param video Video对象

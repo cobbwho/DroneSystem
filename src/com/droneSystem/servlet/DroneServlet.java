@@ -13,14 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.bytedeco.javacv.FFmpegFrameGrabber;
-import org.bytedeco.javacv.FFmpegFrameRecorder;
 import org.json.me.JSONArray;
 import org.json.me.JSONException;
 import org.json.me.JSONObject;
 
+import com.droneSystem.hibernate.CarNum;
 import com.droneSystem.hibernate.Drone;
-import com.droneSystem.hibernate.Department;
 import com.droneSystem.hibernate.Highway;
 import com.droneSystem.hibernate.SandVolume;
 import com.droneSystem.hibernate.SandVolumeDAO;
@@ -31,10 +29,8 @@ import com.droneSystem.hibernate.TaskDAO;
 import com.droneSystem.hibernate.TrafficFlow;
 import com.droneSystem.hibernate.TrafficFlowDAO;
 import com.droneSystem.hibernate.Video;
-import com.droneSystem.hibernate.VideoDAO;
-import com.droneSystem.javacv.Transfer;
 import com.droneSystem.javacv.framerecorder;
-import com.droneSystem.manager.DepartmentManager;
+import com.droneSystem.manager.CarNumManager;
 import com.droneSystem.manager.DroneManager;
 import com.droneSystem.manager.HighwayManager;
 import com.droneSystem.manager.SandVolumeManager;
@@ -58,6 +54,7 @@ public class DroneServlet extends HttpServlet {
 		SnowVolumeManager snowVMgr = new SnowVolumeManager();
 		SandVolumeManager sandVMgr = new SandVolumeManager();
 		TrafficFlowManager TFMgr = new TrafficFlowManager();
+		CarNumManager carNumMgr = new CarNumManager();
 		switch (method) {
 		case 0: //查询所有正在执行任务的无人机
 			JSONObject res = new JSONObject();
@@ -73,6 +70,7 @@ public class DroneServlet extends HttpServlet {
 					option.put("longitude", drone.getLongitude());
 					option.put("latitude", drone.getLatitude());
 					option.put("videoUrl", drone.getVideoUrl());
+					option.put("status", drone.getStatus());
 					droneNum++;
 					options.put(option);
 				}
@@ -180,9 +178,7 @@ public class DroneServlet extends HttpServlet {
 		case 3: //测试方法  读取视频流，保存视频文件，并将视频名称存入数据库
 			JSONObject res3 = new JSONObject();
 			try {
-//				int droneId = Integer.parseInt(req.getParameter("id"));
-				int droneId = 1;
-
+				int droneId = Integer.parseInt(req.getParameter("droneId"));
 				String type = req.getParameter("type");
 				String inputFile = req.getParameter("inputStream");
 				Drone drone = droneMgr.findById(droneId);
@@ -212,7 +208,7 @@ public class DroneServlet extends HttpServlet {
 					snowVMgr.save(snowv);
 					int id = snowv.getId();
 //					inputFile = "D://test//XZ.mp4";
-			        f.frameRecord(inputFile, outputFile,1,ReqType,id);
+			        f.frameRecord(inputFile, outputFile,1,ReqType,id, drone, v);
 				}if(ReqType == 2){		
 					SandVolume sandv = new SandVolume();
 					sandv.setDrone(drone);
@@ -222,7 +218,7 @@ public class DroneServlet extends HttpServlet {
 					sandVMgr.save(sandv);
 					int id = sandv.getId();
 //					inputFile = "D://test//SZ.mp4";
-			        f.frameRecord(inputFile, outputFile,1,ReqType,id);
+			        f.frameRecord(inputFile, outputFile,1,ReqType,id, drone, v);
 				}if(ReqType == 3){
 					TrafficFlow tf = new TrafficFlow();
 					tf.setDrone(drone);
@@ -232,7 +228,7 @@ public class DroneServlet extends HttpServlet {
 					TFMgr.save(tf);
 					int id = tf.getId();
 //					inputFile = "D://test//LL.mp4";
-			        f.frameRecord(inputFile, outputFile,1,ReqType,id);
+			        f.frameRecord(inputFile, outputFile,1,ReqType,id, drone, v);
 				}
 				
 
@@ -332,11 +328,13 @@ public class DroneServlet extends HttpServlet {
 		case 6: //测试方法
 			JSONObject res6 = new JSONObject();
 			try {
-				String videoId = req.getParameter("videoId");
+				String droneId = req.getParameter("droneId");
+				Drone drone = droneMgr.findById(1);
 				String type = req.getParameter("type");
-				Video video = vMgr.findById(Integer.parseInt(videoId));
+				List<Video> videos =  vMgr.findByVarProperty(new KeyValueWithOperator("drone", drone, "="));
+				Video video = videos.get(videos.size()-1);
 				int reqType = Integer.parseInt(type);
-				
+				Double carNum = 0.0;
 				Double ts = 0.0;
 				Timestamp time = new Timestamp(System.currentTimeMillis());
 				if(reqType == 1){
@@ -360,6 +358,7 @@ public class DroneServlet extends HttpServlet {
 				res6.put("isOK", true);
 				res6.put("ts", ts);
 				res6.put("time", time);
+				res6.put("carNum", carNum);
 				} catch (Exception e) {
 					try {
 						res6.put("isOK", false);
@@ -376,6 +375,42 @@ public class DroneServlet extends HttpServlet {
 					resp.setContentType("text/json");
 					resp.setCharacterEncoding("UTF-8");
 					resp.getWriter().write(res6.toString());
+					//System.out.println(res.toString());
+				}
+			break;
+		case 7: //测试方法
+			JSONObject res7 = new JSONObject();
+			try {
+				String droneId = req.getParameter("droneId");
+				Drone drone = droneMgr.findById(1);
+				List<Video> videos =  vMgr.findByVarProperty(new KeyValueWithOperator("drone", drone, "="));
+				Video video = videos.get(videos.size()-1);
+				List<CarNum> carNums = carNumMgr.findByVarProperty(new KeyValueWithOperator("video", video, "="));
+				CarNum nowNum = carNums.get(carNums.size()-1);
+				CarNum lastMinNum = carNums.get(carNums.size()-181);
+				int carNum = nowNum.getCarNum() - lastMinNum.getCarNum();	
+				Timestamp time = new Timestamp(System.currentTimeMillis());
+			
+					
+				res7.put("isOK", true);
+				res7.put("time", time);
+				res7.put("carNum", carNum);
+				} catch (Exception e) {
+					try {
+						res7.put("isOK", false);
+					} catch (JSONException ex) {
+						ex.printStackTrace();
+					}
+					if(e.getClass() == java.lang.Exception.class){ //自定义的消息
+						log.debug("exception in DroneServlet-->case 7", e);
+					}else{
+						log.error("error in DroneServlet-->case 7", e);
+					} 
+
+				}finally{
+					resp.setContentType("text/json");
+					resp.setCharacterEncoding("UTF-8");
+					resp.getWriter().write(res7.toString());
 					//System.out.println(res.toString());
 				}
 			break;
