@@ -80,7 +80,6 @@ public class UserServlet extends HttpServlet {
 				//String info = request.getParameter("Id");
 				String queryStr = "from SysUser as model ";
 				List<Object> list = new ArrayList<Object>();
-				
 				int page = 1;
 				if (request.getParameter("page") != null)
 					page = Integer.parseInt(request.getParameter("page").toString());

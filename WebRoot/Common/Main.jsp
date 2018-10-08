@@ -108,7 +108,6 @@
 			<th scope="col">注册时间</th>
 			<th scope="col">操作选择</th>
 		  </tr>
-		  
 		   
 		</table>
 		<p class="endpages"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">...</a><a href="#">49</a><a href="#">下一页</a><span>到第<input type="text" />页<button>确定</button></span></p>
