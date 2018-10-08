@@ -12,7 +12,7 @@
 			com.microsoft.sqlserver.jdbc.SQLServerDriver
 		</property>
 		<property name="connection.username">sa</property>
-		<property name="connection.password">Passw0rd</property>
+		<property name="connection.password">Ynysawmm020495</property>
 		<property name="dialect">
 			org.hibernate.dialect.SQLServerDialect
 		</property>
@@ -38,7 +38,8 @@
 		<mapping resource="com/droneSystem/hibernate/SnowVolume.hbm.xml" />
  		<mapping resource="com/droneSystem/hibernate/TrafficFlow.hbm.xml" /> 
  		<mapping resource="com/droneSystem/hibernate/RescuePlan.hbm.xml" /> 
- 		<mapping resource="com/droneSystem/hibernate/Record.hbm.xml" /> 
+ 		<mapping resource="com/droneSystem/hibernate/Record.hbm.xml" />  
+ 	    <mapping resource="com/droneSystem/hibernate/CarNum.hbm.xml" />  
 	</session-factory>
 
 </hibernate-configuration>

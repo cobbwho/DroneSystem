@@ -69,6 +69,26 @@ function ale(){
 	alert("该页面暂时未开放！");
  }
 
+function change(obj){
+	var xg=$(obj).html();
+	if(xg=='编辑'){
+		$('.edit').each(function(){
+			var old=$(this).html();
+			$(this).html("<input type='text' name='editname' class='text' value="+old+" >");
+			});
+			$(obj).html('保存');
+			$(obj).css("color","4FCD74");
+		}else if(xg=='保存'){
+			$('input[name=editname]').each(function(){
+				//var old=$(this).html();
+				var newfont=$(this).parent('td').parent('tr').children().find('input').val();
+				$(this).parent('td').html(newfont);
+				});
+				$(obj).html('编辑');
+				
+			}
+}
+
  function showDate()
 {
 	var dt=new Date();

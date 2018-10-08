@@ -86,151 +86,213 @@
 		</script>
 		
 	</HEAD>
-	<BODY bgColor=#ffffff onLoad="javascript:document.form1.userName.focus();">
-		<CENTER>
+	<body bgcolor="#ffffff" onload="javascript:document.form1.userName.focus();">
+		<center>
 			
-			<DIV id=content>
-				<DIV class=module_darkgray>
-					<DIV class=bottomedge_darkgray>
-						<DIV class=topleft_darkgray></DIV>
-						<DIV class=topright_darkgray></DIV>
-						<DIV class=moduleborder>
-							<DIV class=module_inset_darkgray>
-								<DIV class=bottomedge_inset_darkgray>
-									<DIV class=topleft_inset_darkgray></DIV>
-									<DIV class=topright_inset_darkgray></DIV>
-									<DIV style="LEFT: 735px; PADDING-TOP: 5px; POSITION: absolute">
-										<IMG height=20 src="images/white_lock.gif" width=14 border=0>									</DIV>
-									<DIV style="PADDING-LEFT: 35px; PADDING-BOTTOM: 20px; PADDING-TOP: 40px; align: left">
-									<!-- <IMG src="images/text_dotmaclogin.png" border=0>			 -->						</DIV>
-									<DIV style="PADDING-RIGHT: 15px; PADDING-LEFT: 35px">
-										<TABLE cellSpacing=0 cellPadding=0 width=689 border=0>
-											<TBODY>
-												<TR>
-													<TD style="PADDING-RIGHT: 20px" width=318>
-														<TABLE cellSpacing=0 cellPadding=0 border=0>
-															<TBODY>
-																<TR >
-																	<TD style="MARGIN-BOTTOM: 10px" vAlign=top height=15>
-																		<FONT SIZE="3" ><strong>用户登录</strong></FONT>																</TD>
-																</TR>
-																<TR >
-																	<TD class=content_gray_bold height=30>
-																		<FONT SIZE="3" >请输入您的用户名和密码登录系统。</FONT>																</TD>
-																</TR>
-															</TBODY>
-														</TABLE>
+			<div id="content" style="
+								    width: 3100px;
+								    height: 1100px;
+								    margin-top: 400px;
+								    margin-bottom: 80px;
+								">
+				<div class="module_darkgray" style="
+												    height: 1100px;
+												">
+					<div class="bottomedge_darkgray" style="
+														    height: 1100px;
+														">
+						<div class="topleft_darkgray" style="
+														    width: 40px;
+														    height: 40px;
+														"></div>
+						<div class="topright_darkgray" style="
+														    width: 40px;
+														    height: 40px;
+														"></div>
+						<div class="moduleborder" style="
+													    padding-left: 24px;
+													    padding-top: 24px;
+													    padding-right: 24px;
+													    padding-bottom: 24px;
+													    height: 1052px;
+													">
+							<div class="module_inset_darkgray" style="
+																    height: 1052px;
+																">
+								<div class="bottomedge_inset_darkgray" style="
+																		    height: 1052px;
+																		">
+									<div class="topleft_inset_darkgray" style="
+																			    width: 40px;
+																			    height: 40px;
+																			"></div>
+									<div class="topright_inset_darkgray" style="
+																			    width: 40px;
+																			    height: 40px;
+																			"></div>
+									<div style="LEFT: 735px;PADDING-TOP: 5px;POSITION: absolute;left: 2900px;padding-top: 20px;width: 64px;height: 80px;">
+										<img height="20" src="images/white_lock.gif" width="14" border="0" style="
+																											    width: 64px;
+																											    height: 80px;
+																											">									</div>
+									<div style="PADDING-LEFT: 35px;PADDING-BOTTOM: 20px;PADDING-TOP: 40px;align: left;padding-top: 60px;padding-bottom: 50px;">
+									<!-- <IMG src="images/text_dotmaclogin.png" border=0>			 -->						</div>
+									<div style="PADDING-RIGHT: 15px;PADDING-LEFT: 35px;height: 816px;padding-left: 140px;padding-right: 60px;">
+										<table cellspacing="0" cellpadding="0" width="689" border="0" style="
+																										    width: 2852px;
+																										    height: 816px;
+																										">
+											<tbody>
+												<tr>
+													<td style="PADDING-RIGHT: 20px;width: 1376px;padding-right: 80px;" width="318">
+														<table cellspacing="0" cellpadding="0" border="0" style="
+																											    width: 1322px;
+																											    height: 200px;
+																											">
+															<tbody>
+																<tr>
+																	<td style="MARGIN-BOTTOM: 10px" valign="top" height="15">
+																		<font size="44"><strong>用户登录</strong></font>																</td>
+																</tr>
+																<tr>
+																	<td class="content_gray_bold" height="30">
+																		<font size="44">请输入您的用户名和密码登录系统。</font>																</td>
+																</tr>
+															</tbody>
+														</table>
 														<!-- Begin Form -->
-														<form method="post" id="form1" name="form1" theme="simple">
-															<TABLE cellSpacing=0 cellPadding=0 width=318 border=0>
-																<TBODY>
-																	<TR>
-																		<TD height=15>																		</TD>
-																	</TR>
-																	<TR>
-																		<TD align=left>
-																			<SPAN class=content_black_bold><FONT SIZE="3" >用户名</FONT></SPAN>
-																			<BR>
-																			<FONT class=form><INPUT class=form value=""
-																					autocomplete="off" style="WIDTH: 250px"
-																					maxLength=28 name=userName id=username class="easyui-validatebox" required="true"> </FONT>
-																			<font color="red"></font>																		</TD>
-																	</TR>
-																	<TR>
-																		<TD height=8>																		</TD>
-																	</TR>
-																	<TR>
-																		<TD align=left>
-																			<SPAN class=content_black_bold ><FONT SIZE="3" >密码</FONT></SPAN>
-																			<BR>
-																			<FONT class=form><INPUT class=form value=""
-																					style="WIDTH: 250px" type="password" maxLength=32
-																					name="password" minlength="6" class="easyui-validatebox" required="true"> </FONT>																		</TD>
-																	</TR>
-																	<TR>
-																		<TD height=10>
-																			<IMG height=10 alt=""
-																				src="images/spacer.gif"
-																				width=1 border=0>																		</TD>
-																	</TR>
-																	<TR>
-																		<TD class=content_gray vAlign=top align=left>
-																			<A  href="javascript:forget()">忘记密码?</A>
-																		</TD>
-																	</TR>
+														<form method="post" id="form1" name="form1" theme="simple" style="
+																												    height: 600px;
+																												">
+															<table cellspacing="0" cellpadding="0" width="318" border="0" style="
+																																    height: 608px;
+																																    width: 1370px;
+																																">
+																<tbody>
+																	<tr>
+																		<td height="60">																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left">
+																			<span class="content_black_bold"><font size="44">用户名</font></span>
+																			<br>
+																			<br>
+																			<font class="form"><input class="form" value="" autocomplete="off" style="WIDTH: 250px;width: 1290px;height: 70px;border-top-width: 8px;border-right-width: 8px;border-left-width: 8px;border-bottom-width: 8px;padding-top: 4px;padding-bottom: 4px;font-size:44px" maxlength="28" name="userName" id="username" required="true"> </font>
+																			<font color="red"></font>																		</td>
+																	</tr>
+																	<tr>
+																		<td height="32">																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left">
+																			<span class="content_black_bold"><font size="44">密码</font></span>
+																			<br>
+																			<br>
+																			<font class="form"><input class="form" value="" style="WIDTH: 250px;border-left-width: 8px;border-top-width: 8px;border-right-width: 8px;border-bottom-width: 8px;padding-bottom: 4px;padding-top: 4px;width: 1290px;height: 70px;font-size:44px" type="password" maxlength="32" name="password" minlength="6" required="true"> </font>																		</td>
+																	</tr>
+																	<tr>
+																		<td height="40">
+																			<img height="40" alt="" src="images/spacer.gif" width="4" border="0">																		</td>
+																	</tr>
+																	<tr>
+																		<td class="content_gray" valign="top" align="left">
+																			<a href="javascript:forget()" style="font-size:44px">忘记密码?</a>
+																		</td>
+																	</tr>
 
-																	<TR>
-																		<TD noWrap align=right style="padding-right:68px">
-																			<input type="button" id="loginbtn" iconCls="icon-ok" href="javascript:void(0)" onClick="login()" value="登陆"/>
-																		</TD>
-																	</TR>
-																</TBODY>
-															</TABLE>
-														</form>													</TD>
+																	<tr>
+																		<td nowrap="" align="right" style="padding-right:68px">
+																			<input type="button" id="loginbtn" iconcls="icon-ok" href="javascript:void(0)" onclick="login()" value="登陆" style="
+																																														    width: 144px;
+																																														    padding-left: 24px;
+																																														    padding-right: 24px;
+																																														    padding-top: 4px;
+																																														    padding-bottom: 4px;
+																																														    border-top-width: 8px;
+																																														    border-bottom-width: 8px;
+																																														    border-right-width: 8px;
+																																														    border-left-width: 8px;font-size:44px                         
+																																														">
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</form>													</td>
 													<!-- End Form -->
-													<TD vAlign=top>
-														<TABLE cellSpacing=0 cellPadding=0 border=0>
-															<TBODY>
-																<TR>
-																	<TD style="BACKGROUND-COLOR: #e3e3e3" width=2
-																		height=200></TD>
-																</TR>
-															</TBODY>
-														</TABLE>													</TD>
-													<TD style="PADDING-LEFT: 30px" vAlign=top width=318>
+													<td valign="top">
+														<table cellspacing="0" cellpadding="0" border="0">
+															<tbody>
+																<tr>
+																	<td style="BACKGROUND-COLOR: #e3e3e3" width="2" height="200"></td>
+																</tr>
+															</tbody>
+														</table>													</td>
+													<td style="PADDING-LEFT: 30px;width: 1473px;" valign="top" width="318">
 														<!-- Message 2 -->
-														<TABLE cellSpacing=0 cellPadding=0 border=0 id="table1">
-															<TBODY>
-																<TR>
-																	<TD class=content_gray vAlign=top >
+														<table cellspacing="0" cellpadding="0" border="0" id="table1" style="
+    width: 1397px;
+    height: 816px;
+">
+															<tbody>
+																<tr>
+																	<td class="content_gray" valign="top" style="
+    height: 840px;
+">
 																		<param name="wmode" value="transparent">
-																		<embed width="330" height="152" src="images/banner.swf"  menu="false" type="application/octet-stream" wmode="transparent"/>
-																		<p style="margin-top:5px">
-																		为了更合理的管理业务,让员工可以轻松高效地完成工作,促
-																		<br />
-																		进信息化建设的发展.</p>
-																																			</TD>
-																</TR>
-															</TBODY>
-														</TABLE>													</TD>
-												</TR>
-											</TBODY>
-										</TABLE>
-									</DIV>
-								</DIV>
-							</DIV>
-						</DIV>
-					</DIV>
-				</DIV>
-			</DIV>
-			<DIV>
-				<TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
-					<TBODY>
-						<TR>
-							<TD vAlign=top align="center" width=776>
-								无人机业务管理系统							</TD>
-						</TR>
-					</TBODY>
-				</TABLE>
-			</DIV>
+																		<embed width="1390" height="750" src="images/banner.swf" menu="false" type="application/octet-stream" wmode="transparent" style="
+    height: 720px;
+">
+																		<p style="margin-top:20px;font-size:44px;height: 80px;">
+																		为了更合理的管理业务,让员工可以轻松高效地完成工作,促进信息化
+																		<br>
+																		<br>
+																		<br>
+																		社会的发展
+																		</p>
+																																			</td>
+																</tr>
+															</tbody>
+														</table>													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<table cellspacing="0" cellpadding="0" width="776" align="center" border="0">
+					<tbody>
+						<tr>
+							<td valign="top" align="center" width="776" style="font-size:44px">
+								无人机业务管理系统							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<!-- END content_gray -->
-			<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-				<TBODY>
-					<TR>
-						<TD align="center">
-							<FONT class=disclaimer face="Geneva, Verdana, Arial, Helvetica"
-								color=#999999 size=1>©&nbsp;Copyright 2018 .NJUST 623
-								All rights reserved.</FONT>
-							<BR>
-							<BR>						</TD>
-					</TR>
-				</TBODY>
-			</TABLE>
-		</CENTER>
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tbody>
+					<tr>
+						<td align="center">
+							<font class="disclaimer" face="Geneva, Verdana, Arial, Helvetica" color="#999999" style="font-size:44px">©&nbsp;Copyright 2018 .NJUST 623
+								All rights reserved.</font>
+							<br>
+							<br>						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
 <!--     <object CLASSID="clsid:2A3D0646-E5FD-4D18-9DD1-59FB5E9855E0"
         CODEBASE="/droneSystem/Dongle/files/ET299.cab#Version=1,00,0000"
         BORDER="0" VSPACE="0" HSPACE="0" ALIGN="TOP" HEIGHT="0" WIDTH="0">
     </object> -->
-	</BODY>
+	
+
+
+</body>
 </HTML>
 

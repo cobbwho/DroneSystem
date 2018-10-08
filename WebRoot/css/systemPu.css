@@ -75,13 +75,16 @@ p.endpages span{margin:0 0 0 60px}
 p.endpages span input{ width:40px; height:40px; background:#515b67; border:0; margin:0 15px}
 p.endpages span button{ padding:0 20px; height:40px; background:#515b67; border:0; color:#fff; margin:0 0 0 30px; cursor:pointer}
 
-table.person_name th a{color:#80ff3e}
+table.person_name th a{color:#f86b0e}
+table.person_name th a:link,table.person_name th a:visited{ color:#f86b0e}
+table.person_name th a:hover{ color:#fff}
 /*table.huo_lists{background:url(../images/trbg.png) repeat;}*/
 table.huo_lists tr td{text-align:center; color:#fff; font-size:36px; padding:10px 0}
-table.huo_lists tr td span{color:#00ffe9}
+table.huo_lists tr td.edit {color:#00ffe9}
+table.huo_lists tr td.edit input{color:#000;width:200px}
 table.huo_lists td a:first-child:link,table.huo_lists td a:first-child:visited{ color:#f86b0e}
 table.huo_lists td a:first-child:hover{ color:#fff}
-td.bbg{background:#1e4875}
+tr.bbg{background:#1e4875}
 
 div.addperson{position:absolute; left:1546px; top:160px; width:2291px; height:1085px; background:url(../images/personbg.png) repeat-x top}
 table.newaperson{margin:50px 0 0 0}

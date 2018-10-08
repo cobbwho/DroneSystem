@@ -397,185 +397,155 @@
 		<h5 class="title_sample"><span>当前为Ⅲ级应急响应资源配置方案</span><a href="#"><img src="../images/cross.png" /></a></h5>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="person_name">
 		  <tr>
-			<th align="center" width="10%" style="height:145px">类型</th>
-			<th align="left" width="14%">图片</th>
-			<th align="center" width="14%">名称</th>
+			<th align="center" width="12%" style="height:145px">类型</th>
+			<th align="left" width="12%">图片</th>
+			<th align="center" width="12%">名称</th>
 			<th align="center" width="12%">单位</th>
 			<th align="center" width="14%">高效型方案</th>
 			<th align="center" width="14%">均衡型方案</th>
 			<th align="center" width="14%">经济型方案</th>
-			<th align="center" width="8%"><a href="#">提交</a></th>
+			<th align="center" width="10%"><a href="javascript:void(0)" onclick="change(this)" >编辑</a></th>
 		  </tr>
 		</table>
 		<div style=" height:1280px; overflow-y:auto">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="huo_lists">
 			  <tr>
-				<td width="10%" rowspan="3" valign="top">除雪物资</td>
-				<td width="14%" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td width="14%">无机融雪剂</td>
+				<td width="12%" rowspan="9" valign="middle">除雪物资</td>
+				<td width="12%" style="text-align:left"><img src="../images/1.jpg" width="191" height="148" /></td>
+				<td width="12%">无机融雪剂</td>
 				<td width="12%">T/百公里</td>
-				<td width="14%"><span>50</span></td>
-				<td width="14%"><span>40</span></td>
-				<td width="14%"><span>30</span></td>
-				<td width="8%"><a href="#">编辑</a></td>
+				<td width="14%" class="edit">50</td>
+				<td width="14%" class="edit">40</td>
+				<td width="14%" class="edit">30</td>
+				<td width="10%"><a href="#"></a></td>
 			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/2.jpg" width="191" height="148" /></td>
+				<td class="bbg">有机融雪剂（尿素）</td>
 				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
 			  </tr>
 			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
+				<td style="text-align:left"><img src="../images/3.jpg" width="191" height="148" /></td>
+				<td>-10#柴油</td>
 				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
+			  </tr>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/4.jpg" width="191" height="148" /></td>
+				<td class="bbg">铣刨废料</td>
+				<td class="bbg">T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/5.jpg" width="191" height="148" /></td>
+				<td>碎石（粒径0.5-1）</td>
+				<td>T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
+			  </tr>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
+				<td class="bbg">草垫</td>
+				<td class="bbg">T/百公里</td>
+			    <td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/7.jpg" width="191" height="148" /></td>
+				<td>铁锹</td>
+				<td>T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
+			  </tr>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/8.jpg" width="191" height="148" /></td>
+				<td class="bbg">扫帚</td>
+				<td class="bbg">T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/9.jpg" width="191" height="148" /></td>
+				<td>车辆防滑链</td>
+				<td>T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
+			  </tr>
+			   <tr class="bbg">
+				<td rowspan="5" valign="middle">除雪设备</td>
+				<td class="bbg" style="text-align:left"><img src="../images/10.jpg" width="191" height="148" /></td>
+				<td class="bbg">平地机</td>
+				<td class="bbg">T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
+			  </tr>
+			  <tr>
+				<td style="text-align:left"><img src="../images/11.jpg" width="191" height="148" /></td>
+				<td>道路融冰车</td>
+				<td>T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
+			  </tr>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/12.jpg" width="191" height="148" /></td>
+				<td class="bbg">撒布车</td>
+				<td class="bbg">T/百公里</td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
 			  </tr>
 			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
+				<td style="text-align:left"><img src="../images/13.jpg" width="191" height="148" /></td>
+				<td>货车</td>
 				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
 			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
+			  <tr class="bbg">
+				<td class="bbg" style="text-align:left"><img src="../images/14.jpg" width="191" height="148" /></td>
+				<td class="bbg">装载机</td>
 				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td class="bbg"><a href="#"></a></td>
 			  </tr>
 			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
+				<td rowspan="1" valign="middle">除雪人员</td>
+				<td style="text-align:left"><img src="../images/15.jpg" width="191" height="148" /></td>
+				<td>人员</td>
 				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			 <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			 <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
+				<td class="edit">50</td>
+				<td class="edit">40</td>
+				<td class="edit">30</td>
+				<td><a href="#"></a></td>
 			  </tr>
 			</table>
 		</div>
