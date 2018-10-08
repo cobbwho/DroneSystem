@@ -96,7 +96,7 @@
 		<div class="fright sousuort"><input type="text" /><button><img src="../images/searchicon.png" /></button></div>
 		<div class="myclear"></div> 
 		<!-------每页112条数据-------->
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="person_name">
+		<table id="usertable" width="100%" border="0" cellpadding="0" cellspacing="0" class="person_name">
 		  <tr>
 			<th scope="col" width="140">&nbsp;</th>
 			<th scope="col">ID</th>
@@ -108,127 +108,8 @@
 			<th scope="col">注册时间</th>
 			<th scope="col">操作选择</th>
 		  </tr>
-		  <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
-		   <tr>
-			<td><input type="checkbox" /></td>
-			<td>17001</td>
-			<td>33dfadsfd</td>
-			<td>张天翼</td>
-			<td>审计部门</td>
-			<td>普通管理员</td>
-			<td>可用</td>
-			<td>2017-05-22</td>
-			<td><a href="#">编辑</a><a href="#">删除</a></td>
-		  </tr>
+		  
+		   
 		</table>
 		<p class="endpages"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">...</a><a href="#">49</a><a href="#">下一页</a><span>到第<input type="text" />页<button>确定</button></span></p>
 	
@@ -974,6 +855,45 @@
 			//alert(videoId);
             //alert(videoId + data.ts);
 			}	
+		}); 	
+	    
+	}
+
+	function totable3(data){
+		data = data.rows;
+		$.each(data,function (index,item) {    
+			//alert(index+item.userName);
+			var tr;  				
+			tr = "<td><input type='checkbox' /></td>"; 	
+			tr += "<td>" + item.Id + "</td>";   
+			tr += "<td>" + item.userName + "</td>";  
+			tr += "<td>" + item.Name + "</td>";       
+			tr += "<td>" + item.JobTitle + "</td>"; 
+			tr += "<td>" + item.Education  + "</td>";     
+			tr += "<td>" + item.Status + "</td>";    
+			tr += "<td>" + item.CancelDate + "</td>";     					
+			tr += "<td><a href='#'>编辑</a><a href='#'>删除</a></td>";   
+			  										
+			$("#usertable").append("<tr>"+tr+"</tr>");			
+									
+		})
+	    
+	}
+	
+	user();
+	function user(){
+		$.ajax({
+			type: "post", 
+			cache: false, 
+			dataType: 'json',
+			url: '/droneSystem/UserServlet.do?method=0',
+			data:{},
+			success: function(data){
+//				totable1(data);
+//				totable2(data);
+				totable3(data);
+		
+			}
 		}); 	
 	    
 	}
