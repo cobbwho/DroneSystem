@@ -77,72 +77,9 @@ public class UserServlet extends HttpServlet {
 		case 0: // 分页查询
 			JSONObject res = new JSONObject();
 			try {
-				String queryname = request.getParameter("queryname");
-				String queryGender = request.getParameter("queryGender");
-				String queryJobTitle = request.getParameter("queryJobTitle");
-				String queryDepartment = request.getParameter("queryDepartment");
-				String queryProjectTeam = request.getParameter("queryProjectTeam");
-				String queryStatus = request.getParameter("queryStatus");
-				String queryType = request.getParameter("queryType");
-				String queryTel = request.getParameter("queryTel");
-				String queryIDNum = request.getParameter("queryIDNum");
-				String queryPolStatus = request.getParameter("queryPolStatus");
-				String queryStr = "from SysUser as model,ProjectTeam as pro where 1=1 and model.projectTeamId = pro.id ";
+				//String info = request.getParameter("Id");
+				String queryStr = "from SysUser as model ";
 				List<Object> list = new ArrayList<Object>();
-				if(queryname != null&&!queryname.equals(""))
-				{
-					String userNameStr = URLDecoder.decode(queryname, "UTF-8");
-					
-					list.add("%" + userNameStr + "%");
-					list.add("%" + userNameStr + "%");
-					queryStr = queryStr + "and (model.brief like ? or model.name like ?) ";
-				}
-				if(queryGender != null&&!queryGender.equals("undefined"))
-				{
-					String userGenderStr = URLDecoder.decode(queryGender, "UTF-8");
-					list.add(Integer.valueOf(userGenderStr).equals(0));
-					queryStr = queryStr + "and model.gender = ? ";
-				}
-				if(queryJobTitle != null&&!queryJobTitle.equals(""))
-				{
-					String userJobTitleStr = URLDecoder.decode(queryJobTitle, "UTF-8");
-					list.add("%" + userJobTitleStr + "%");
-					queryStr = queryStr + "and model.jobTitle like ? ";
-				}
-				
-				if(queryStatus != null&&!queryStatus.equals(""))
-				{
-					String userStatusStr = URLDecoder.decode(queryStatus, "UTF-8");
-					list.add(LetterUtil.isNumeric(userStatusStr)?Integer.valueOf(userStatusStr):0);
-					queryStr = queryStr + "and model.status = ? ";
-				}
-				if(queryType != null&&!queryType.equals(""))
-				{
-					String userTypeStr = URLDecoder.decode(queryType, "UTF-8");
-					list.add(LetterUtil.isNumeric(userTypeStr)?Integer.valueOf(userTypeStr):0);
-					queryStr = queryStr + "and model.type = ? ";
-				}
-				if(queryTel != null&&!queryTel.equals(""))
-				{
-					String userTelStr = URLDecoder.decode(queryTel, "UTF-8");
-					list.add("%" + userTelStr + "%");
-					list.add("%" + userTelStr + "%");
-					list.add("%" + userTelStr + "%");
-					queryStr = queryStr + "and (model.tel like ? or model.cellphone1 like ? or model.cellphone2 like ?) ";
-				}
-				if(queryIDNum != null&&!queryIDNum.equals(""))
-				{
-					String userIDNumStr = URLDecoder.decode(queryIDNum, "UTF-8");
-					list.add("%" + userIDNumStr + "%");
-					queryStr = queryStr + "and model.idnum like ? ";
-				}
-				if(queryPolStatus != null&&!queryPolStatus.equals(""))
-				{
-					String userPolStatusStr = URLDecoder.decode(queryPolStatus, "UTF-8");
-					list.add("%" + userPolStatusStr + "%");
-					queryStr = queryStr + "and model.politicsStatus like ? ";
-				}
-				
 				int page = 1;
 				if (request.getParameter("page") != null)
 					page = Integer.parseInt(request.getParameter("page").toString());
@@ -151,31 +88,31 @@ public class UserServlet extends HttpServlet {
 					rows = Integer.parseInt(request.getParameter("rows").toString());
 				List<Object[]> result;
 				int total;
-				result = userMgr.findPageAllByHQL("select model,pro " + queryStr + " order by pro.proTeamCode asc,model.jobNum asc", page, rows, list);
-				total = userMgr.getTotalCountByHQL("select count(model) "+queryStr, list);
+				result = userMgr.findPageAllByHQL("select model " + queryStr + " order by model.status asc, model.jobNum asc", page, rows, list);
+				total = userMgr.getTotalCountByHQL("select count(model) " + queryStr, list);
 				JSONArray options = new JSONArray();
-					for (Object[] obj : result) {
-						SysUser user = (SysUser)obj[0];
+				//如果你有幸看到这段话，提醒你不要用Object[] obj去for:each这个result你会奔溃的...
+					for (Object obj : result) {
+						SysUser user = (SysUser)obj;
 						JSONObject option = new JSONObject();
 						option.put("Id", user.getId());
 						option.put("Name", user.getName());
-						option.put("Brief", user.getBrief());
+						//option.put("Brief", user.getBrief());
 						option.put("userName", user.getUserName());
-						option.put("Gender", user.getGender());
-						option.put("JobNum", user.getJobNum());
-						option.put("Birthday", user.getBirthday());
-						option.put("IDNum", user.getIdnum());
+						//option.put("Gender", user.getGender());
+						//option.put("JobNum", user.getJobNum());
+						//option.put("Birthday", user.getBirthday());
+						//option.put("IDNum", user.getIdnum());
 						option.put("Education", user.getEducation());
-						option.put("Degree", user.getDegree());					
+						//option.put("Degree", user.getDegree());					
 						option.put("JobTitle", user.getJobTitle());
-						option.put("HomeAdd", user.getHomeAdd());
-						option.put("Tel", user.getTel());
-						option.put("Cellphone1", user.getCellphone1());
-						option.put("Cellphone2", user.getCellphone2());
-						option.put("DepartmentId", user.getDepartment().getId());
-						option.put("Email", user.getEmail());
+						//option.put("Tel", user.getTel());
+						//option.put("Cellphone1", user.getCellphone1());
+						//option.put("Cellphone2", user.getCellphone2());
+						//option.put("DepartmentId", user.getDepartment().getId());
+						//option.put("Email", user.getEmail());
 						option.put("Status", user.getStatus());
-
+						
 						options.put(option);
 					}
 					res.put("total", total);
@@ -197,7 +134,7 @@ public class UserServlet extends HttpServlet {
 					response.setContentType("text/json");
 					response.setCharacterEncoding("UTF-8");
 					response.getWriter().write(res.toString());
-					//System.out.println(res.toString());
+					System.out.println(res.toString());
 				}
 			break;
 		case 1:	//新增用户
