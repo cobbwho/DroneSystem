@@ -134,7 +134,7 @@ public class UserServlet extends HttpServlet {
 					response.setContentType("text/json");
 					response.setCharacterEncoding("UTF-8");
 					response.getWriter().write(res.toString());
-					System.out.println(res.toString());
+					//System.out.println(res.toString());
 				}
 			break;
 		case 1:	//新增用户
