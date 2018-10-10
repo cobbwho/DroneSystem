@@ -739,7 +739,7 @@
 			            marker.addEventListener("click", function (){
 			            //map.panTo(point);		            
 						showInfo(this, thepoint);//开启信息窗口
-//						test(droneId);
+						test(droneId);
 						
 						getEcharts(droneId);
 						/* videojs("my-video").ready(function(){

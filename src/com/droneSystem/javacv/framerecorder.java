@@ -99,30 +99,33 @@ public class framerecorder {
 	                record.setVideo(video);
 	                
 	                if(flag%20 == 1){
-						String Volume = hUtil .doPost("http://127.0.0.1:4050", "{\"UAVID\":\"1\", \"ImgSrc\":\""+fileName+"\", \"ReqType\":\"" + reqType +"\"}");
-						JSONObject resp = new JSONObject(Volume); 
+						//String Volume = hUtil .doPost("http://127.0.0.1:4050", "{\"UAVID\":\"1\", \"ImgSrc\":\""+fileName+"\", \"ReqType\":\"" + reqType +"\"}");
+						//JSONObject resp = new JSONObject(Volume); 
 						if(reqType == 1){
-			            	snowv.setSnowVolume(Double.parseDouble(resp.getString("Value")));
+			            	snowv.setSnowVolume(Double.parseDouble("7"));
 			            	snowv.setTime(time);
 			            	snowVMgr.update(snowv);
-			            	record.setValue(Double.parseDouble(resp.getString("Value")));
+			            	record.setValue(Double.parseDouble("7"));
 			            	
 			            }
 			            if(reqType == 2){
-			            	sandv.setSandVolume(Double.parseDouble(resp.getString("Value")));
+			            	sandv.setSandVolume(Double.parseDouble("7"));
 			            	sandv.setTime(time);
 			            	sandVMgr.update(sandv);
-			            	record.setValue(Double.parseDouble(resp.getString("Value")));
+			            	record.setValue(Double.parseDouble("7"));
 			            }
 			            if(reqType == 3){
-			            	tf.setVolume(Double.parseDouble(resp.getString("Value")));
+//			            	tf.setVolume(Double.parseDouble("7"));
+			            	tf.setVolume(1.1);
 			            	tf.setTime(time);
 			            	TFMgr.update(tf);
-			            	record.setValue(Double.parseDouble(resp.getString("Value")));
+//			            	record.setValue(Double.parseDouble("7"));
+			            	record.setValue(1.1);
 			            	CarNum carNum = new CarNum();
 			            	carNum.setTrafficFlow(tf);
 			            	carNum.setTime(time);
-			            	carNum.setCarNum(Integer.parseInt(resp.getString("Track")));
+//			            	carNum.setCarNum(Integer.parseInt("7"));
+			            	carNum.setCarNum(10);
 			            }
 	                }
 	                flag++; 
