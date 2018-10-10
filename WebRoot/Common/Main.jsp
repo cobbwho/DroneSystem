@@ -17,7 +17,7 @@
 <script type="text/javascript" src="../JScript/admin.js"></script>
 <script type="text/javascript" src="../JScript/map.js"></script>
 <!-- <script type="text/javascript" src="../JScript/chart1.js"></script> -->
-<script type="text/javascript" src="../JScript/chart2.js"></script>
+<!-- <script type="text/javascript" src="../JScript/chart2.js"></script> -->
 <script type="text/javascript" src="../JScript/json2.js"></script>
 <script type="text/javascript" src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>
 <title>内蒙古无人机项目管理系统-车流量</title>
@@ -48,7 +48,7 @@
 	</div>
 	<div class="myclear"></div>
 	
-	<p class="h128box"><button>应急响应资源配置方案</button></p>
+	<p class="h128box"></p>
 	
 	<div class="fleft maparea">
 		<h5 class="title_sample"><span>车流量地图</span></h5>
@@ -272,195 +272,6 @@
 		<p class="endpages"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">...</a><a href="#">49</a><a href="#">下一页</a><span>到第<input type="text" />页<button>确定</button></span></p>
 	</div>
 	<!--弹框003结束-->
-	<!--弹框004-->
-	<div class="userlist" id="rescueplanlist">
-		<h5 class="title_sample"><span>当前为Ⅲ级应急响应资源配置方案</span><a href="#"><img src="../images/cross.png" /></a></h5>
-		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="person_name">
-		  <tr>
-			<th align="center" width="10%" style="height:145px">类型</th>
-			<th align="left" width="14%">图片</th>
-			<th align="center" width="14%">名称</th>
-			<th align="center" width="12%">单位</th>
-			<th align="center" width="14%">高效型方案</th>
-			<th align="center" width="14%">均衡型方案</th>
-			<th align="center" width="14%">经济型方案</th>
-			<th align="center" width="8%"><a href="#">提交</a></th>
-		  </tr>
-		</table>
-		<div style=" height:1280px; overflow-y:auto">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="huo_lists">
-			  <tr>
-				<td width="10%" rowspan="3" valign="top">除雪物资</td>
-				<td width="14%" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td width="14%">无机融雪剂</td>
-				<td width="12%">T/百公里</td>
-				<td width="14%"><span>50</span></td>
-				<td width="14%"><span>40</span></td>
-				<td width="14%"><span>30</span></td>
-				<td width="8%"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			   <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			 <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td rowspan="3" valign="top">除雪物资</td>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			  <tr>
-				<td style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td>无机融雪剂</td>
-				<td>T/百公里</td>
-				<td><span>50</span></td>
-				<td><span>40</span></td>
-				<td><span>30</span></td>
-				<td><a href="#">编辑</a></td>
-			  </tr>
-			 <tr>
-				<td class="bbg" style="text-align:left"><img src="../images/6.jpg" width="191" height="148" /></td>
-				<td class="bbg">无机融雪剂</td>
-				<td class="bbg">T/百公里</td>
-				<td class="bbg"><span>50</span></td>
-				<td class="bbg"><span>40</span></td>
-				<td class="bbg"><span>30</span></td>
-				<td class="bbg"><a href="#">编辑</a></td>
-			  </tr>
-			</table>
-		</div>
-	</div>
-	<!--弹框004结束-->
 </body>
 </html>	
 
@@ -470,22 +281,28 @@
     var timer=1;
 	var videoId = 0;
 	 	
-     var myChart1 = echarts.init(document.getElementById('echarts1'),'blue');   
-		var now = new Date();
+     var myChart1 = echarts.init(document.getElementById('echarts1'),'blue');  
+     var myChart2 = echarts.init(document.getElementById('echarts2'),'blue'); 
+		var time1 = new Date();
+		var time2 = new Date();
 		var len = 10;
 		var res = [];
-		while (len--) {
-		res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
-		    now = new Date(now - 2000);
-		}
 		var res1 = [];
-		//var res2 = [];
+		var res2 = [];
+		while (len--) {
+		res.unshift(time1.toLocaleTimeString().replace(/^\D*/,''));
+	    time1 = new Date(time1 - 3000);
+	    res2.unshift(time2.toLocaleTimeString().replace(/^\D*/,''));
+	    time2 = new Date(time2 - 60000);
+		}
+		
 		var len = 10;
 		while (len--) {
 		    res1.push(0);
 		  
 		}
-		var xAxisData = res; //x轴数据
+		var xAxisData1 = res; //x轴数据
+		var xAxisData2 = res2;
 		var yAxisData = res1; //y轴数据
 
 	
@@ -567,7 +384,7 @@
 	                },
 
 		            boundaryGap : true,
-		            data:xAxisData
+		            data:xAxisData1
 		        },
 		         {
 		            type: 'category',
@@ -658,7 +475,15 @@
 		            type:'line',
 		           // stack:'one',
 		            
-		            data:yAxisData,
+		            data:(function (){
+			                var res = [];
+			                var len = 0;
+			                while (len < 10) {
+			                    res.push(0);
+			                    len++;
+			                }
+			                return res;
+			            })(),
 		            markPoint : {
 			                data : [
 			                    {type : 'max', name: '最大值'},
@@ -676,16 +501,222 @@
 		  ]
 		};
 
-    var axisData;
-	var lastData = 0;
-	clearInterval(app);
-	var app = {};
-	app.count = 11;
+ var option2 = {
+				title: {
+			        text: '',   
+			        textstyle:{
+			            fontWeight: 'normal',              //标题颜色
+			            color: 'FFFFFF',
+			            fontSize:'25'
+			    }
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'cross',
+			            label: {
+			            //    backgroundColor: 'F2F2F2'
+			            }
+			        }
+			    },
+			    legend: {
+			        data:['每分钟上行车流量变化', '每分钟下行车流量变化'],
+			        textStyle: {  
+			            color: '#fff',          //legend字体颜色 
+			            fontSize:'22'
+			
+			        }
+			
+			      
+			    },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataView: {readOnly: false},
+			           // magicType : {show: true, type: ['line', 'bar']},
+			            restore: {},
+			            saveAsImage: {}
+			        },
+			        itemSize:'22',
+			        emphasis:{//触发时
+			            iconStyle:{
+			                borderColor:"white"//图形的描边颜色
+			            }
+			        }
+			    },
+			    dataZoom: {
+			        show: true,
+			        start: 0,
+			        end: 100
+			    },
+			    xAxis: [
+			        {
+			            type: 'category',
+			            axisLabel: {        
+			                show: true,
+			                textStyle: {
+			                    color: '#fff',
+			                    fontSize:'20'
+			                }
+			            },
+			        // 控制网格线是否显示
+				        splitLine: {
+				                show: false, 
+				                //  改变轴线颜色
+				                lineStyle: {
+				                    // 使用深浅的间隔色
+				                    color: ['white']
+				                }                            
+				        },
+			            axisLine:{
+			                lineStyle:{
+			                    color:'#FFFFFF',
+			                    width:2
+			                }
+			            },
+			
+			
+			            boundaryGap: true,
+			            data: (function (){
+				                var now = new Date();
+				                var res = [];
+				                var len = 10;
+				                while (len--) {
+				                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+				                    now = new Date(now - 60000);
+				                }
+				                return res;
+				            })()
+			        },
+			        {
+			            type: 'category',
+			            boundaryGap: true,
+			            data: (function (){
+			                var res = [];
+			                var len = 10;
+			                while (len--) {
+			                    res.push(10 - len - 1);
+			                }
+			                return res;
+			            })()
+			        }
+			    ],
+			    yAxis: [
+			        {
+			            type: 'value',
+			            scale: true,
+			            name: '车流量V/h',
+			            axisLabel: {        
+			                show: true,
+			                textStyle: {
+			                    color: '#fff',
+			                    fontSize:'20'
+			                }
+			            },
+			            // 控制网格线是否显示
+			            splitLine: {
+			                    show: false, 
+			                    //  改变轴线颜色
+			                    lineStyle: {
+			                        // 使用深浅的间隔色
+			                        color: ['white']
+			                    }                            
+			            },
+			            max: 30,
+			            min: 0,
+			            boundaryGap: [0.2, 0.2]
+			        },
+			        {
+			            type: 'value',
+			            scale: true,
+			            name: '车流量V/h',
+			            axisLabel: {        
+			                show: true,
+			                textStyle: {
+			                    color: '#fff',
+			                    fontSize:'20'
+			                }
+			            },
+			            // 控制网格线是否显示
+			            splitLine: {
+			                    show: false, 
+			                    //  改变轴线颜色
+			                    lineStyle: {
+			                        // 使用深浅的间隔色
+			                        color: ['white']
+			                    }                            
+			            },
+			            max: 1200,
+			            min: 0,
+			            boundaryGap: [0.2, 0.2]
+			        }
+			       
+			    ],
+			    series: [
+			        {
+			            name:'每分钟上行车流量变化',
+			            type:'bar',
+			            xAxisIndex: 1,
+			            yAxisIndex: 1,   
+			            data:
+			             (function (){
+			                var res = [];
+			                var len = 10;
+			                while (len--) {
+			                    res.push(0);
+			                }
+			                return res;
+			            })() ,
+			            markPoint : {
+			                data : [
+			                    {type : 'max', name: '最大值'},
+			                    {type : 'min', name: '最小值'}
+			                ]
+			            },
+			            markLine : {
+			                data : [
+			                    {type : 'average', name: '平均值'}
+			                ]
+			            }
+			        },
+			        {
+			            name:'每分钟下行车流量变化',
+			            type:'bar',
+			            data:(function (){
+			                var res = [];
+			                var len = 0;
+			                while (len < 10) {
+			                    res.push(0);
+			                    len++;
+			                }
+			                return res;
+			            })(),
+			            markPoint : {
+			                data : [
+			                    {type : 'max', name: '最大值'},
+			                    {type : 'min', name: '最小值'}
+			                ]
+			            },
+			            markLine : {
+			                data : [
+			                    {type : 'average', name: '平均值'}
+			                ]
+			            }
+			        }
+			    ]
+			};
+		
+
+    
 	myChart1.setOption(option1);
+	myChart2.setOption(option2);
     $(window).resize(function(){
        myChart1.resize();
+       myChart2.resize();
     });
     window.onresize = myChart1.resize();
+    window.onresize = myChart2.resize();
+	
 	
 	
 	 var opts = {
@@ -741,7 +772,8 @@
 						showInfo(this, thepoint);//开启信息窗口
 						test(droneId);
 						
-						getEcharts(droneId);
+						getEcharts1(droneId);
+						getEcharts2(droneId);
 						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
 							myPlayer.play();
@@ -757,8 +789,12 @@
 					 var infoWindow = new BMap.InfoWindow(content, opts);
 					 thisMarker.openInfoWindow(infoWindow);
 			       }	
-			       function getEcharts(droneId){
-				          app.timeTicket = setInterval(function (){
+			       function getEcharts1(droneId){
+			              clearInterval(app1);
+			              var app1 = {};
+			              var lastData = 0;
+	                      app1.count = 10;
+				          app1.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=6';
 						  var paramData={type:3,droneId:droneId};
 						  $.ajax({
@@ -773,24 +809,26 @@
 						      success: function(data){
 						          if(data != null){
 						          
-						          //lastData = data.ts;
-						          lastData = Math.round(Math.random() * 1000);
+						          lastData = data.ts;
+						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
 						      }
 						  }); 
 
+						    var axisData;	
 						    axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
 						    var data0 = option1.series[0].data;
 						    var data1 = option1.series[1].data;
 						    data0.shift();
-						    data0.push(Math.round(Math.random() * 1000));
+						    data0.push(lastData);
+						    //data0.push(Math.round(Math.random() * 1000));
 						    data1.shift();
-						    data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+						    data1.push(0); 
 						    option1.xAxis[0].data.shift();
 				    		option1.xAxis[0].data.push(axisData);
 				    		option1.xAxis[1].data.shift();
-                            option1.xAxis[1].data.push(app.count++);				    		
+                            option1.xAxis[1].data.push(app1.count++);				    		
 				    		myChart1.setOption(option1);
 						  // 动态数据接口 addData
 					      /* myChart1.addData([
@@ -803,7 +841,61 @@
 					        ]		       
 						  ]); */
 						}, 3000);
-				     }            		           		
+				     } 
+				     
+				     function getEcharts2(droneId){
+			     		  clearInterval(app2);
+			     		  var app2 = {};
+			     		  var lastdata1=0;
+	 					  app2.count = 10;
+				          app2.timeTicket = setInterval(function (){
+						  var url = '/droneSystem/DroneServlet.do?method=7';
+						  var paramData={type:3,droneId:droneId};
+						  $.ajax({
+						      url: url,
+						      type: 'post',
+						      data: paramData,
+						      dataType: 'json',
+						      cache: false,
+						      error:function(){
+						          console.log("get redis error!!!");
+						      },
+						      success: function(data){
+						          if(data != null){
+						          
+						          lastData1 = data.ts;
+						          //lastData = Math.round(Math.random() * 1000);
+						        
+						          }
+						      }
+						  }); 
+  
+						    
+						    var axisData1;
+						    axisData1 = (new Date()).toLocaleTimeString().replace(/^\D*/, ''); 
+						    var data3 = option2.series[0].data;
+						    var data4 = option2.series[1].data;
+						    data3.shift();
+						    data3.push(lastdata1);
+						    data4.shift();
+						    data4.push(0);
+						    option2.xAxis[0].data.shift();
+				    		option2.xAxis[0].data.push(axisData1);
+				    		option2.xAxis[1].data.shift();
+                            option2.xAxis[1].data.push(app2.count++);				    		
+				    		myChart2.setOption(option2);
+						  // 动态数据接口 addData
+					      /* myChart1.addData([
+					        [
+					            0,        // 系列索引
+					            lastData, // 新增数据
+					            false,     // 新增数据是否从队列头部插入
+					            false,    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+					            axisData //横轴数据
+					        ]		       
+						  ]); */
+						}, 30000);
+				     }             		           		
 				}	
 		}	
 		}); 	
