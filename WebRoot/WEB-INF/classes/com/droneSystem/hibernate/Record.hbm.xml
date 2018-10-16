@@ -22,8 +22,11 @@
         <property name="time" type="java.sql.Timestamp">
             <column name="Time" length="23" not-null="true" />
         </property>
-        <property name="value" type="java.lang.Double">
-            <column name="Value" precision="53" scale="0" not-null="true" />
+        <property name="valueLeft" type="java.lang.Double">
+            <column name="ValueLeft" precision="53" scale="0" not-null="true" />
+        </property>
+        <property name="valueRight" type="java.lang.Double">
+            <column name="ValueRight" precision="53" scale="0" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

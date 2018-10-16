@@ -15,7 +15,8 @@ public class Record implements java.io.Serializable {
 	private Integer id;
 	private Integer type;
 	private Drone drone;
-	private Double value;
+	private Double valueLeft;
+	private Double valueRight;
 	private Timestamp time;
 	private Video video;
 
@@ -26,12 +27,13 @@ public class Record implements java.io.Serializable {
 	}
 	
 	/** minimal constructor */
-	public Record(Integer type, Drone drone, Video video, Timestamp time, Double value) {
+	public Record(Integer type, Drone drone, Video video, Timestamp time, Double valueLeft, Double valueRight) {
 		this.type = type;
 		this.drone = drone;
 		this.video = video;
 		this.time = time;
-		this.value = value;
+		this.valueLeft = valueLeft;
+		this.valueRight = valueRight;
 	}
 	
 
@@ -77,12 +79,20 @@ public class Record implements java.io.Serializable {
 		this.time = time;
 	}
 
-	public Double getValue() {
-		return this.value;
+	public Double getValueLeft() {
+		return this.valueLeft;
 	}
 
-	public void setValue(Double value) {
-		this.value = value;
+	public void setValueLeft(Double valueLeft) {
+		this.valueLeft = valueLeft;
+	}
+	
+	public Double getValueRight() {
+		return this.valueRight;
+	}
+
+	public void setValueRight(Double valueRight) {
+		this.valueRight = valueRight;
 	}
 	
 }

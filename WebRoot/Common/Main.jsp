@@ -70,7 +70,8 @@
 			</video>
 			-->
 		<object type='application/x-vlc-plugin' id='vlc' events='True' width="2500px" height="1410px" pluginspage="http://www.videolan.org" codebase="http://downloads.videolan.org/pub/videolan/vlc-webplugins/2.0.6/npapi-vlc-2.0.6.tar.xz">
-        <param name='mrl' value='../Inc/MOV_0030.MOV' />
+<!-- <param name='mrl' value='../Inc/MOV_0030.MOV' /> -->        
+		<param name='mrl' value='rtsp://47.94.19.230:10554/gzrtsp.sdp' />
         <param name='volume' value='50' />
         <param name='autoplay' value='false' />
         <param name='loop' value='false' />
@@ -420,7 +421,7 @@
 			                    color: ['white']
 			                }                            
 			        },
-			        max: 1200,
+			        max: 20,
            			min: 0,
 		           boundaryGap: [0.2, 0.2],
 		           
@@ -445,7 +446,7 @@
 			                    color: ['white']
 			                }                            
 			        },
-			        max: 1200,
+			        max: 20,
            			min: 0,
 		           boundaryGap: [0.2, 0.2],
 		           
@@ -622,7 +623,7 @@
 			                        color: ['white']
 			                    }                            
 			            },
-			            max: 30,
+			            max: 100,
 			            min: 0,
 			            boundaryGap: [0.2, 0.2]
 			        },
@@ -646,7 +647,7 @@
 			                        color: ['white']
 			                    }                            
 			            },
-			            max: 1200,
+			            max: 100,
 			            min: 0,
 			            boundaryGap: [0.2, 0.2]
 			        }
@@ -770,14 +771,21 @@
 			            marker.addEventListener("click", function (){
 			            //map.panTo(point);		            
 						showInfo(this, thepoint);//开启信息窗口
-//						test(droneId);
+						
+						test(droneId);
 						
 						getEcharts1(droneId);
 						getEcharts2(droneId);
+						var vlc = document.getElementById("vlc"); 
+						var id = 0; 
+						//id = vlc.playlist.add(videoUrl); //添加mrl到播放列表
+						id = vlc.playlist.add("rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"); //添加mrl到播放列表						
+						vlc.playlist.playItem(id);  //播放播放列表里的序列
 						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
 							myPlayer.play();
-						}); */
+						}); 
+						 */
 						
 						
 			            });
@@ -846,7 +854,7 @@
 				     function getEcharts2(droneId){
 			     		  clearInterval(app2);
 			     		  var app2 = {};
-			     		  var lastdata1=0;
+			     		  var lastData1=0;
 	 					  app2.count = 10;
 				          app2.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=7';
@@ -862,8 +870,7 @@
 						      },
 						      success: function(data){
 						          if(data != null){
-						          
-						          lastData1 = data.ts;
+						          lastData1 = data.carNum;
 						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
@@ -876,7 +883,7 @@
 						    var data3 = option2.series[0].data;
 						    var data4 = option2.series[1].data;
 						    data3.shift();
-						    data3.push(lastdata1);
+						    data3.push(lastData1);
 						    data4.shift();
 						    data4.push(0);
 						    option2.xAxis[0].data.shift();
@@ -894,7 +901,7 @@
 					            axisData //横轴数据
 					        ]		       
 						  ]); */
-						}, 30000);
+						}, 60000);
 				     }             		           		
 				}	
 		}	
@@ -911,6 +918,9 @@
            	dataType: 'json',
            	url: '/droneSystem/DroneServlet.do?method=3',
            	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
+//			data:{droneId:droneId, type:3,inputStream:"D:\\test\\total_Receive_HDMI.h264"},
+//			data:{droneId:droneId, type:3,inputStream:"rtsp://47.94.19.230:10554/gzrtsp.sdp"},
+
             success: function(data){
             //alert(321);
          		videoId = data.videoId;

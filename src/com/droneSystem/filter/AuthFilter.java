@@ -215,6 +215,9 @@ public class AuthFilter extends HttpServlet implements Filter {
 	 */
 	private boolean isUnprotectedUrl(HttpServletRequest request) {
 		String url = request.getRequestURI().toString();
+		if(url.equals("/droneSystem/DroneServlet.do")){
+			return true;
+		}
 		int index = url.indexOf(ProjectName);
 		if (index > -1) {
 			url = url.substring(index + ProjectName.length());

@@ -19,8 +19,11 @@
         <property name="time" type="java.sql.Timestamp">
             <column name="Time" length="23" not-null="true" />
         </property>
-        <property name="carNum" type="java.lang.Integer">
-            <column name="CarNum" not-null="true" />
+        <property name="carNumLeft" type="java.lang.Integer">
+            <column name="CarNumLeft" not-null="true" />
+        </property>
+        <property name="carNumRight" type="java.lang.Integer">
+            <column name="CarNumRight" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
