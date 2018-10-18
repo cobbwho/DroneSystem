@@ -22,8 +22,8 @@
 		<property name="volumeLeft" type="java.lang.Double">
             <column name="VolumeLeft" precision="53" scale="0" not-null="true" />
         </property>
-        <property name="volumeLeft" type="java.lang.Double">
-            <column name="VolumeLeft" precision="53" scale="0" not-null="true" />
+        <property name="volumeRight" type="java.lang.Double">
+            <column name="VolumeRight" precision="53" scale="0" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
