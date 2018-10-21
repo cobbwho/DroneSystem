@@ -18,6 +18,7 @@ public class Video implements java.io.Serializable {
 	private String video;
 	private Timestamp time;
 	private Integer status;
+	private Integer type;
 
 	// Constructors
 
@@ -26,12 +27,13 @@ public class Video implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Video(String code, Drone drone, String video, Timestamp time, Integer status) {
+	public Video(String code, Drone drone, String video, Timestamp time, Integer status, Integer type) {
 		this.code = code;
 		this.drone = drone;
 		this.video = video;
 		this.time = time;
 		this.status = status;
+		this.type = type;
 	}
 
 	// Property accessors
@@ -82,6 +84,14 @@ public class Video implements java.io.Serializable {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+	
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
 	}
 
 }

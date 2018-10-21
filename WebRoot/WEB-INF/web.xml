@@ -145,6 +145,16 @@
   	<url-pattern>/DroneServlet.do</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+  	<description>视频管理</description>
+  	<servlet-name>VideoServlet</servlet-name>
+  	<servlet-class>com.droneSystem.servlet.VideoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>VideoServlet</servlet-name>
+  	<url-pattern>/VideoServlet.do</url-pattern>
+  </servlet-mapping>
+  
     <servlet>
   	<description>地图管理</description>
   	<servlet-name>HighwayServlet</servlet-name>

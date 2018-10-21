@@ -105,8 +105,8 @@ public class framerecorder {
 		                record.setType(reqType);
 		                record.setTime(time);
 		                record.setVideo(video);
-						String Volume = hUtil .doPost("http://127.0.0.1:4050", "{\"UAVID\":\"1\", \"ImgSrc\":\""+fileName+"\",\"Lat\":\""+latitude+"\",\"Lon\":\""+longitude+"\", \"ReqType\":\"" + reqType +"\"}");
-						JSONObject resp = new JSONObject(Volume); 
+//						String Volume = hUtil .doPost("http://127.0.0.1:4050", "{\"UAVID\":\"1\", \"ImgSrc\":\""+fileName+"\",\"Lat\":\""+latitude+"\",\"Lon\":\""+longitude+"\", \"ReqType\":\"" + reqType +"\"}");
+//						JSONObject resp = new JSONObject(Volume); 
 //						if(reqType == 1){
 //			            	snowv.setSnowVolume(Double.parseDouble(resp.getString("Value")));
 //			            	snowv.setTime(time);
@@ -121,22 +121,25 @@ public class framerecorder {
 //			            	record.setValue(Double.parseDouble(resp.getString("Value")));
 //			            }
 			            if(reqType == 3){
-			            	tf.setVolumeLeft(Double.parseDouble(resp.getString("Value")));
-			            	tf.setVolumeRight(Double.parseDouble(resp.getString("Value")));
-//			            	tf.setVolume(1.1);
+//			            	tf.setVolumeLeft(Double.parseDouble(resp.getString("ValueLeft")));
+//			            	tf.setVolumeRight(Double.parseDouble(resp.getString("ValueRight")));
+			            	tf.setVolumeLeft(1.1);
+			            	tf.setVolumeRight(1.1);
 			            	tf.setTime(time);
 			            	TFMgr.update(tf);
-			            	record.setValueLeft(Double.parseDouble(resp.getString("Value"))); 
-			            	record.setValueRight(Double.parseDouble(resp.getString("Value"))); 
-//			            	record.setValue(1.1);
+//			            	record.setValueLeft(Double.parseDouble(resp.getString("ValueLeft"))); 
+//			            	record.setValueRight(Double.parseDouble(resp.getString("ValueRight"))); 
+			            	record.setValueLeft(1.1);
+			            	record.setValueRight(1.1);
 			            	reMgr.save(record);
 			            	CarNum carNum = new CarNum();
 			            	carNum.setTrafficFlow(tf);
 			            	carNum.setTime(time);
 			            	carNum.setVideo(video);
-			            	carNum.setCarNumLeft(Integer.parseInt(resp.getString("Track")));
-			            	carNum.setCarNumRight(Integer.parseInt(resp.getString("Track")));
-//			            	carNum.setCarNum(num);
+//			            	carNum.setCarNumLeft(Integer.parseInt(resp.getString("TrackLeft")));
+//			            	carNum.setCarNumRight(Integer.parseInt(resp.getString("TrackRight")));
+			            	carNum.setCarNumLeft(num);
+			            	carNum.setCarNumRight(num);
 			            	carMgr.save(carNum);
 			            	
 			            }

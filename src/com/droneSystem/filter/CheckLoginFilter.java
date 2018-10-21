@@ -151,7 +151,7 @@ public class CheckLoginFilter implements Filter {
 				// 用户超时或没有登陆时跳转到登陆页面
 				if (session == null || session.getAttribute(SystemCfgUtil.SessionAttrNameLoginUser) == null) {
 					log.debug("Logout automatically");
-					response.sendRedirect("/jlyw/");
+					response.sendRedirect("/droneSystem/");
 					return ;
 				}
 			}
