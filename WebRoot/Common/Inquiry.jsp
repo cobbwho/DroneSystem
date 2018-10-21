@@ -9,17 +9,13 @@
 <script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="../Inc/Style/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="../Inc/Style/Style.css" />
-<link rel="stylesheet" type="text/css" href="../Inc/Style/video-js.css" >
 <script type="text/javascript" src="../Inc/JScript/jquery-1.6.min.js"></script>
 <script type="text/javascript" src="../Inc/JScript/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../Inc/JScript/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JScript/upload.js"></script>
 <script type="text/javascript" src="../JScript/admin.js"></script>
-<script type="text/javascript" src="../JScript/map.js"></script>
-<script type="text/javascript" src="../JScript/chart1.js"></script>
-<script type="text/javascript" src="../JScript/chart2.js"></script>
+<script type="text/javascript" src="../JScript/inquiry.js"></script>
 <script type="text/javascript" src="../JScript/json2.js"></script>
-<script type="text/javascript" src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>
 <title>内蒙古无人机项目管理系统-查询统计</title>
 </head>
 <body>
@@ -34,7 +30,7 @@
 			<li><a href="Snow.jsp">雪阻信息</a></li>
 			<li><a href="Sand.jsp">沙阻信息</a></li>
 			<li><a href="javascript:void(0)" onclick="ale()">红外信息</a></li>
-			<li><a href="javascript:void(0)" onclick="ale()">查询统计</a></li>
+			<li><a href="Inquiry.jsp" class="pagenow">查询统计</a></li>
 		</ul>
 		</div>
 		<div class="fright">
@@ -48,38 +44,54 @@
 	</div>
 	<div class="myclear"></div>
 	
-	<p class="h128box"><button>应急响应资源配置方案</button></p>
+	<p class="h128box"></p>
 	
-	<div class="fleft maparea">
-		<h5 class="title_sample"><span>车流量地图</span></h5>
-		<div id="allmap" style="width: 2021px; height: 1410px">
+	<div class="fleft maparea" >
+		<h5 class="title_sample"><span>无人机视频列表</span></h5>
+		<table border="0" cellspacing="0" cellpadding="0" class="person_name">
+		  <tr>
+			<th align="center" width="10%" style="height:93px">编号</th>
+			<th align="center" width="16%">无人机编号</th>
+			<th align="center" width="16%">视频文件名类型</th>
+			<th align="center" width="16%">时间</th>
+			<th align="center" width="16%">状态</th>
+			<th align="center" width="16%">算法类型</th>
+			<th align="center" width="10%"></th>
+		  </tr>
+		</table>
+		<div style=" height:1323px; overflow-y:auto; background:#092E64">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="person_name"  id="videolist">
+		
+		</table>
 		</div>
 	</div>
 	
-	<div class="fleft videoarea">
-		<h5 class="title_sample"><span>车流量视频</span></h5>
-		<div id="video" style="width:2500px;height:1410px">
-			<video id="my-video" class="video-js vjs-default-skin" controls="controls" preload="auto" title="无人机视频"  width="2500px" height="1410px"
-			poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
-			<source src="../maps/MOV_0030.mp4" type="video/mp4">
-				<!-- <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv">-->
-				<p class="vjs-no-js">
-				To view this video please enable JavaScript, and consider upgrading to a web browser that
-				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-				</p>
-			</video>
+	<!-- <div class="fleft videoarea">
+		<h5 class="title_sample"><span>无人机视频算法图表</span></h5>
+		<div id="echarts" style="width:2500px;height:1410px">
+		
 		</div>
-	</div>
+	</div> -->
+
 	
-	<div class="fleft timesarea">
-		<h5 class="title_sample"><span>实时车流量变化情况</span></h5>
-		<div id="echarts1" style="width:960px;height:616px"></div>
+	<div class="fleft trafficarea">
+		<h5 class="title_sample"><span>车流量查询统计结果</span></h5>
+		<div id="trafficechart" style="width:1460px;height:616px"></div>
 	</div>
-	<div class="fleft montharea">
-		<h5 class="title_sample"><span>月流量变化情况</span></h5>
-		<div id="echarts2" style="width:960px;height:616px"></div>
+	<div class="fleft snowarea">
+		<h5 class="title_sample"><span>雪阻查询统计结果</span></h5>
+		<div id="snowechart" style="width:1460px;height:616px"></div>
 	</div>
-	<div class="myclear"></div>
+	<div class="fleft sandarea">
+		<h5 class="title_sample"><span>沙阻查询统计结果</span></h5>
+		<div id="sandechart" style="width:1460px;height:616px"></div>
+	</div>
+	<div class="fleft infraredarea">
+		<h5 class="title_sample"><span>红外查询统计结果</span></h5>
+		<div id="infraredechart" style="width:1460px;height:616px"></div>
+	</div>
+	<div class="myclear"></div>	
+	
 	
 	<!--弹框001-->
 	<div class="userlist">
@@ -229,166 +241,92 @@
 </html>	
 
 <script type="text/javascript">
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");
-    var timer=1;
-	var videoId = 0;
-	var axisData;
-	 var lastData = 0;
-	 clearInterval(app);
-	 var app = {};
-	 
-	getUnmans();
-	setInterval("getUnmans()",60000) ;//设定每一分钟刷新一次
-    function getUnmans(id){
-	  $.ajax({
-       	 	type: "post", 
-           	cache: false, 
-         	dataType: 'json',
-         	url: '/droneSystem/DroneServlet.do?method=0',
-           	data:{Id:id},
-            success: function(data){
-            
-               //map.panTo(new BMap.Point(data.drones[0].longitude, data.drones[0].latitude));
-               
-			   // deletePoint();
-				for(var i=0;i<data.drones.length;i++) { 
-				    //var myIcon = new BMap.Icon("../images/drone.png", new BMap.Size(10,10));
-				    //alert(i);
-				    var icon = new BMap.Icon('..//images//camera.png', new BMap.Size(100, 100),{
-				   
-				    anchor:new BMap.Size(0,0),
-                    imageOffset:new BMap.Size(0,0)});
-                    icon.setImageSize(new BMap.Size(24, 24));
-			        var point = new BMap.Point(data.drones[i].longitude,data.drones[i].latitude);  
-			        var marker = new BMap.Marker(point,{ // 创建标注点
-							icon: icon
-							});		
-				 	map.addOverlay(marker); //添加标注
-					//var label = new window.BMap.Label(data.drones[i].code, {offset: new window.BMap.Size(20, -10)}); //创建标签   
-                    var label = new window.BMap.Label("无人机编号:"+data.drones[i].code,{offset: new window.BMap.Size(20, -10)});  // 创建文本标注对象
-		                label.setStyle({
-			                  color : "#0099cc",
-			                  fontSize : "20px",
-			                  backgroundColor :"0.05",
-			                  border:"0",			                  
-			                  lineHeight : "20px",
-			                  fontWeight :"bold" //字体加粗
-		                 });
-		            marker.setLabel(label);  //添加标签
-		            
-		            (function(){
-			            var thepoint = data.drones[i]; 
-			            marker.addEventListener("click", function (){
-			            //map.panTo(point);		            
-						showInfo(this, thepoint);//开启信息窗口
-						test();
-						videojs("my-video").ready(function(){
-							var myPlayer = this;
-							myPlayer.play();
-						});
-						getEcharts();
-			            });
-		            })();		            		           		
-				}	
-		}	
-		}); 	
-    
-	}
-	
-	
-	
-	 function showInfo(thisMarker,point){
-         //thisMarker.setAnimation(BMAP_ANIMATION_BOUNCE);
-         var content = 
-		"<p style='margin:0;line-height:1.5;font-size:20px;text-indent:0em'>无人机编号： "+point.code+"<br/>经度："+point.longitude+" 纬度："+point.latitude+"</br>雪阻预警等级： 2</br>状态： 0</p>";
-		 var infoWindow = new BMap.InfoWindow(content, opts);
-		 thisMarker.openInfoWindow(infoWindow);
-     }
-     
-           
-     function getEcharts(){
-          app.timeTicket = setInterval(function (){
-		  var url = '/droneSystem/DroneServlet.do?method=6';
-		  var paramData={type:1};
-		  $.ajax({
-		      url: url,
-		      type: 'post',
-		      data: paramData,
-		      dataType: 'json',
-		      cache: false,
-		      error:function(){
-		          console.log("get redis error!!!");
-		      },
-		      success: function(data){
-		          if(data != null){
-		          //alert(data.ts);
-		          axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
-		          lastData = data.ts;
-		          //lastData = Math.round(Math.random() * 1000);
-		        
-		          }
-		      }
-		  }); 
-		  // 动态数据接口 addData
-	      myChart.addData([
-	        [
-	            0,        // 系列索引
-	            lastData, // 新增数据
-	            false,     // 新增数据是否从队列头部插入
-	            false,    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-	            axisData //横轴数据
-	        ]		       
-		  ]);
-		}, 2000);
-     }
-     
-	 function test(){
-	  $.ajax({
-       	 	type: "post", 
-           	cache: false, 
-           	dataType: 'json',
-           	url: '/droneSystem/DroneServlet.do?method=3',
-           	data:{type:3,inputStream:"D:\\test\\LL.mp4"},
-            success: function(data){
-            //alert(321);
-         		videoId = data.videoId;
-			}	
-		}); 	
-    
-	}
-	
-	function test1(){
-		  $.ajax({
-           	 	type: "post", 
-               	cache: false, 
-             	dataType: 'json',
-             	url: '/droneSystem/DroneServlet.do?method=5',
-             	data:{type:3},
-            	success: function(data){
-            		//alert(data.ts);
-					timer ++;
-//         			alert(data.Scale);
-				}	
-			}); 	
+	function totable3(data){
+		data = data.rows;
+		$.each(data,function (index,item) {    
+			//alert(index+item.userName);
+			var tr;  				
+			tr = "<td><input type='checkbox' /></td>"; 	
+			tr += "<td>" + item.Id + "</td>";   
+			tr += "<td>" + item.userName + "</td>";  
+			tr += "<td>" + item.Name + "</td>";       
+			tr += "<td>" + item.JobTitle + "</td>"; 
+			tr += "<td>" + item.Education  + "</td>";     
+			tr += "<td>" + item.Status + "</td>";    
+			tr += "<td>" + item.CancelDate + "</td>";     					
+			tr += "<td><a href='#'>编辑</a><a href='#'>删除</a></td>";   
+			  										
+			$("#usertable").append("<tr>"+tr+"</tr>");			
+									
+		});
 	    
-		}
+	}
 
-	function test2(){
+	
+	user();
+	function user(){
 		$.ajax({
 			type: "post", 
 			cache: false, 
 			dataType: 'json',
-			url: '/droneSystem/DroneServlet.do?method=6',
-			data:{type:3,videoId:videoId},
+			url: '/droneSystem/UserServlet.do?method=0',
+			data:{},
 			success: function(data){
-			//alert(videoId);
-            //alert(videoId + data.ts);
-			}	
+//				totable1(data);
+//				totable2(data);
+				totable3(data);
+				//totable4(data);
+		
+			}
 		}); 	
 	    
 	}
 
+	
 
+    video();
+	function video(){
+		$.ajax({
+			type: "post", 
+			cache: false, 
+			dataType: 'json',
+			url: '/droneSystem/VideoServlet.do?method=0',
+			data:{},
+			success: function(data){
+				      alert(data);
+				      console.log(data);
+                    for(var i=0;i<data.length;i++){     
+                        var tr="";    				
+						tr += "<td width='10%'>" + data[i].code + "</td>";   
+						tr += "<td width='16%'>" + data[i].drone + "</td>";  
+						tr += "<td width='16%'>" + data[i].video + "</td>";       
+						tr += "<td width='16%'>" + data[i].time + "</td>"; 
+						tr += "<td width='16%'>" + data[i].status + "</td>";
+						tr += "<td width='16%'>" + data[i].type  + "</td>";
+						tr += "<td width='10%'><a id='trafficbutton' href='javascript:void(0)'>查看</a></th>";
+                        $("#videolist").append("<tr>"+tr+"</tr>");
+	                    }
+                   	
+                    
+			       /*  data = data.rows;
+		            $.each(data,function (item) {    			      
+					var tr;  				
+					tr += "<td width='10%'>" + item.code + "</td>";   
+					tr += "<td width='16%'>" + item.drone + "</td>";  
+					tr += "<td width='16%'>" + item.video + "</td>";       
+					tr += "<td width='16%'>" + item.time + "</td>"; 
+					tr += "<td width='16%'>" + item.status  + "</td>";
+					tr += "<td width='16%'>" + item.type  + "</td>";
+					tr += "<td width='10%'><a id='trafficbutton' href='javascript:void(0)'>查看</a></th>";				 										
+					$("#videolist").append("<tr>"+tr+"</tr>");		 
+									
+		});
+			
+
+		*/	
+			}
+		}); 	
+	    
+	}
 </script>
 

@@ -43,7 +43,7 @@ p.h128box{width:100%; height:128px; text-align:right;}
 p.h128box button{border:0; background:url(../images/button_bg01.png); width:559px; height:96px; color:#fff; font-size:40px; margin:20px 80px 0 0; cursor:pointer}
 
 div.maparea{width:2021px; height:1505px; border:2px solid #14548c; margin:0 35px 0 40px; display:inline}
-h5.title_sample{width:100%; height:94px; background:url(../images/title_bg.png) no-repeat left top; color:#fff; font-size:40px;}
+h5.title_sample{width:100%; height:93px; background:url(../images/title_bg.png) no-repeat left top; color:#fff; font-size:40px;}
 h5.title_sample span{ padding:0 0 0 30px; background:url(../images/title_line02.jpg) no-repeat left center; margin:20px 0 0 30px; display:inline-block; height:59px; line-height:59px; font-weight:normal}
 h5.title_sample a{ position:absolute; right:0}
 div.allmap{position:relative}
@@ -53,12 +53,17 @@ div.map_search button,div.sousuort button{ background:none; border:0; float:left
 div.videoarea{width:2500px; height:1505px; border:2px solid #14548c; margin-right:26px; display:inline }
 div.timesarea{width:960px; height:722px; border:2px solid #14548c; margin-bottom:63px; display:inline}
 div.montharea{width:960px; height:716px; border:2px solid #14548c; display:inline}
+div.trafficarea{width:1560px; height:722px; border:2px solid #14548c; margin-bottom:63px; margin-right:63px;display:inline}
+div.snowarea{width:1560px; height:722px; border:2px solid #14548c; margin-bottom:63px; display:inline}
+div.sandarea{width:1560px; height:722px; border:2px solid #14548c; margin-right:63px; display:inline}
+div.infraredarea{width:1560px; height:722px; border:2px solid #14548c; display:inline}
 
 
 div.userlist{position:absolute; z-index:101; left:2100px; top:250px; width:2500px; height:1616px;display:none; background:url(../images/personbg.png) repeat-x top}
 div.sousuolf{margin:10px 0 30px 100px}
 div.sousuolf a{margin-right:60px}
 div.sousuort{width:698px; height:88px; background:#0f58c0; margin:20px 50px 30px 0; border-radius:10px;}
+table.person_name{width:100%;background:url(../images/personbg.png) repeat-x top}
 table.person_name th{background:#123d77; height:77px; font-size:42px; color:#fff;}
 table.person_name td{font-size:36px; color:#fff; text-align:center; padding:29px 0; line-height:50px}
 table.person_name td a{margin:0 30px}

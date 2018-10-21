@@ -774,6 +774,7 @@
 						test(droneId);
 						
 						getEcharts1(droneId);
+						
 						getEcharts2(droneId);
 						var vlc = document.getElementById("vlc"); 
 						var id = 0; 
