@@ -1,4 +1,4 @@
-#Sun Sep 16 01:54:44 CST 2018
+#Wed Oct 10 14:21:38 CST 2018
 eclipse.preferences.version=1
 encoding//WebRoot/BaseData/EmployeeRecord/EmpQualificationCX.jsp=GBK
 encoding//WebRoot/BaseData/EmployeeRecord/EmployeeRecordCX.jsp=GBK
@@ -17,4 +17,4 @@ encoding//src/com/droneSystem/util/ExcelCompareUtil.java=GBK
 encoding//src/com/droneSystem/util/FlagUtil.java=GBK
 encoding//src/com/droneSystem/util/LetterUtil.java=GBK
 encoding//src/com/droneSystem/util/SysStringUtil.java=GBK
-encoding/<project>=GBK
+encoding/<project>=gbk

@@ -25,6 +25,9 @@
         <property name="height" type="java.lang.Double">
             <column name="Height" precision="53" scale="0" />
         </property>
+        <property name="speed" type="java.lang.Double">
+            <column name="Speed" precision="53" scale="0" />
+        </property>
         <property name="longitude" type="java.lang.Double">
             <column name="Longitude" precision="53" scale="0" />
         </property>
@@ -39,6 +42,12 @@
         </property>
         <property name="status" type="java.lang.Integer">
             <column name="Status" not-null="true" />
+        </property>
+        <property name="angle" type="java.lang.Double">
+            <column name="Angle" precision="53" scale="0" />
+        </property>
+        <property name="clicked" type="java.lang.Boolean">
+            <column name="Clicked" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

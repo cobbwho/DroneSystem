@@ -23,8 +23,9 @@ public class Drone implements java.io.Serializable {
 	private Integer isTask;
 	private Integer status;
 	private String videoUrl;
-	
-
+	private Double angle;
+	private Double speed;
+	private Boolean clicked;
 	// Constructors
 
 	/** default constructor */
@@ -34,14 +35,16 @@ public class Drone implements java.io.Serializable {
 
 	/** minimal constructor 
 	 **/
-	public Drone(String code, Integer status) {
+	public Drone(String code, Integer status, Boolean clicked) {
 		this.code = code;
 		this.status = status;
+		this.clicked = clicked;
 	}
 	
 	/** full constructor */
 	public Drone(String code, String manufacturer, String model, Double weight, 
-			Double height,Double longitude, Double latitude, Integer isTask, String videoUrl, Integer status) {
+			Double height,Double longitude, Double latitude, Integer isTask, 
+			String videoUrl, Integer status, Double angle, Boolean clicked, Double speed) {
 		this.code = code;
 		this.manufacturer = manufacturer;
 		this.model = model;
@@ -52,6 +55,8 @@ public class Drone implements java.io.Serializable {
 		this.isTask = isTask;
 		this.videoUrl = videoUrl;
 		this.status = status;
+		this.angle = angle;
+		this.clicked = clicked;
 	}
 
 	// Property accessors
@@ -143,5 +148,28 @@ public class Drone implements java.io.Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+	
+	public Double getAngle() {
+		return this.angle;
+	}
 
+	public void setAngle(Double angle) {
+		this.angle = angle;
+	}
+	
+	public Double getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(Double speed) {
+		this.speed = speed;
+	}
+	
+	public Boolean getClicked() {
+		return this.clicked;
+	}
+
+	public void setClicked(Boolean clicked) {
+		this.clicked = clicked;
+	}
 }

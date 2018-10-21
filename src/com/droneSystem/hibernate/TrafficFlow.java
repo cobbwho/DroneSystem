@@ -15,8 +15,8 @@ public class TrafficFlow implements java.io.Serializable {
 	private Drone drone;
 	private Video video;
 	private Timestamp time;
-	private Double volume;
-	
+	private Double volumeLeft;
+	private Double volumeRight;
 	// Constructors
 
 	/** default constructor */
@@ -26,11 +26,12 @@ public class TrafficFlow implements java.io.Serializable {
 	/** full constructor 
 	 **/
 	public TrafficFlow(Drone drone,
-			Video video, Timestamp time, Double volume) {
+			Video video, Timestamp time, Double volumeLeft, Double volumeRight) {
 		this.drone = drone;
 		this.video = video;
 		this.time = time;
-		this.volume = volume;
+		this.volumeLeft = volumeLeft;
+		this.volumeRight = volumeRight;
 	}
 
 	// Property accessors
@@ -51,12 +52,20 @@ public class TrafficFlow implements java.io.Serializable {
 		this.drone = drone;
 	}
 	
-	public Double getVolume() {
-		return this.volume;
+	public Double getVolumeLeft() {
+		return this.volumeLeft;
 	}
 
-	public void setVolume(Double volume) {
-		this.volume = volume;
+	public void setVolumeLeft(Double volumeLeft) {
+		this.volumeLeft = volumeLeft;
+	}
+	
+	public Double getVolumeRight() {
+		return this.volumeRight;
+	}
+
+	public void setVolumeRight(Double volumeRight) {
+		this.volumeRight = volumeRight;
 	}
 	
 	public Video getVideo() {

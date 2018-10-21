@@ -14,7 +14,8 @@ public class CarNum implements java.io.Serializable {
 
 	private Integer id;
 	private TrafficFlow trafficFlow;
-	private Integer carNum;
+	private Integer carNumLeft;
+	private Integer carNumRight;
 	private Timestamp time;
 	private Video video;
 	// Constructors
@@ -24,9 +25,10 @@ public class CarNum implements java.io.Serializable {
 	}
 	
 	/** minimal constructor */
-	public CarNum(TrafficFlow trafficFlow, Integer carNum, Timestamp time, Video video) {
+	public CarNum(TrafficFlow trafficFlow, Integer carNumLeft, Integer carNumRight, Timestamp time, Video video) {
 		this.trafficFlow = trafficFlow;
-		this.carNum = carNum;
+		this.carNumLeft = carNumLeft;
+		this.carNumRight = carNumRight;
 		this.time = time;
 		this.video = video;
 	}
@@ -58,12 +60,20 @@ public class CarNum implements java.io.Serializable {
 		this.video = video;
 	}
 	
-	public Integer getCarNum() {
-		return this.carNum;
+	public Integer getCarNumLeft() {
+		return this.carNumLeft;
 	}
 
-	public void setCarNum(Integer carNum) {
-		this.carNum = carNum;
+	public void setCarNumLeft(Integer carNumLeft) {
+		this.carNumLeft = carNumLeft;
+	}
+	
+	public Integer getCarNumRight() {
+		return this.carNumRight;
+	}
+
+	public void setCarNumRight(Integer carNumRight) {
+		this.carNumRight = carNumRight;
 	}
 
 	public Timestamp getTime() {

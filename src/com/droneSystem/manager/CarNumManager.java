@@ -144,12 +144,12 @@ public class CarNumManager {
 	
 	/**
 	 * 
-	 * @param arr
+	 * @param keyValueWithOperator
 	 * @return
 	 */
-	public List<CarNum> findByVarProperty(KeyValueWithOperator...arr){
+	public List<CarNum> findByVarProperty(KeyValueWithOperator keyValueWithOperator){
 		try{
-			return m_dao.findByVarProperty("CarNum", arr);
+			return m_dao.findByVarProperty("CarNum", keyValueWithOperator);
 		}
 		catch(Exception e){
 			return null;

@@ -31,7 +31,9 @@ public class DroneManager {
 	public Drone findById(int id) {
 		return m_dao.findById(id);
 	}
-	
+	public List findByCode(String code) {
+		return m_dao.findByCode(code);
+	}
 	/**
 	 * 插入一条Drone记录
 	 * @param drone Drone对象
