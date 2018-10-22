@@ -34,7 +34,7 @@
 			<li><a href="Snow.jsp">雪阻信息</a></li>
 			<li><a href="Sand.jsp">沙阻信息</a></li>
 			<li><a href="javascript:void(0)" onclick="ale()">红外信息</a></li>
-			<li><a href="Inquiry.jsp">查询统计</a></li>
+			<li><a href="javascript:void(0)" onclick="ale()" >查询统计</a></li>
 		</ul>
 		</div>
 		<div class="fright">
@@ -93,27 +93,45 @@
 	<!--弹框001-->
 	<div class="userlist" id="userlist">
 		<h5 class="title_sample"><span>用户列表</span><a id="userlist_close" href="#" ><img src="../images/cross.png" /></a></h5>
-		<div class="fleft sousuolf"><a href="#"><img src="../images/addperson.png" /></a><a href="#"><img src="../images/delectperson.png" /></a></div>
+		<div class="fleft sousuolf"><a href='javascript:$("#new_user").css("display","block");$("#submit_btn").attr("value","1");'><img src="../images/addperson.png" /></a></div>
 		<div class="fright sousuort"><input type="text" /><button><img src="../images/searchicon.png" /></button></div>
 		<div class="myclear"></div> 
-		<!-------每页112条数据-------->
 		<table id="usertable" width="100%" border="0" cellpadding="0" cellspacing="0" class="person_name">
-		  <tr>
-			<th scope="col" width="140">&nbsp;</th>
-			<th scope="col">ID</th>
-			<th scope="col">用户名</th>
-			<th scope="col">真实姓名</th>
-			<th scope="col">部门</th>
-			<th scope="col">角色</th>
-			<th scope="col">账号状态</th>
-			<th scope="col">注册时间</th>
-			<th scope="col">操作选择</th>
-		  </tr>
-		   
 		</table>
-		<p class="endpages"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">...</a><a href="#">49</a><a href="#">下一页</a><span>到第<input type="text" />页<button>确定</button></span></p>
-	
+		<p class="endpages" id="user"></p>
 	</div> 
+	<div id="new_user" style="position:absolute; z-index:101; left:2750px; top:500px; width:1250px; height:900px;display:none; background:url(../images/personbg.png) repeat-x top">
+		<h5 class="title_sample"><span>添加用户</span><a id="userlist_close" href="#" ><img src="../images/cross.png" /></a></h5>
+		<form id="new_user_form" style="padding:10px 20px 10px 40px;margin-left:50px;margin-top:30px" method="post">
+			<tr style="width:1000px;margin-left:auto;margin-right:auto;"><td>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名 : </td><td><input type="text" name="Name" class="easyui-validatebox" required="true" style="width:70%;margin:25px;padding:10px 15px 10px 15px"></td></tr>
+			<tr style="width:1000px;margin-left:auto;margin-right:auto;"><td>用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名 : </td><td><input type="text" name="userName" class="easyui-validatebox" required="true" style="width:70%;margin:25px;padding:10px 15px 10px 15px"></td></tr>
+			<tr style="width:1000px;margin-left:auto;margin-right:auto;">
+				<td>所&nbsp;属&nbsp;部&nbsp;门 : </td>
+				<td>
+					<select id="department" class="easyui-validatebox" name="DepartmentId" style="width:73%;margin:25px;padding:10px 15px 10px 15px" required="true">
+						<option value="1">财务部</option>
+						<option value="2">收发室</option>
+						<option value="3">业务管理科</option>
+					</select>
+				</td>
+			</tr>
+			<tr style="width:1000px;margin-left:auto;margin-right:auto;">
+				<td>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别 : </td>
+				<td>
+					<select class="easyui-validatebox" name="Gender" style="width:73%;margin:25px;padding:10px 15px 10px 15px" required="true">
+						<option value="0">男</option>
+						<option value="1">女</option>
+					</select>
+				</td>
+			</tr>
+			<tr style="width:1000px;margin-left:auto;margin-right:auto;"><td>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 : </td><td><input type="text" name="Password" class="easyui-validatebox" required="true" style="width:70%;margin:25px;padding:10px 15px 10px 15px"></td></tr>
+			<tr><td><input style='display:none;' name='Id' class='easyui-validatebox' value='-1'></input></td></tr>
+			<div style="padding:5px;text-align:center;margin-top:30px">
+				<button id="submit_btn" class="easyui-linkbutton" icon="icon-ok" style="width:150px;height:60px;margin-right:20px" onclick="saveUser(this)" value="0">确认</button>
+				<button class="easyui-linkbutton" icon="icon-cancel" style="width:150px;height:60px" onclick='$("#new_user").css("display","none");'>取消</button>
+			</div>
+		</form>
+	</div>
 	<!--弹框001结束-->
 	<!--弹框002-->
 	<div class="userlist" id="rolelist">
@@ -771,15 +789,15 @@
 			            marker.addEventListener("click", function (){
 			            //map.panTo(point);		            
 						showInfo(this, thepoint);//开启信息窗口
+						
 						test(droneId);
 						
 						getEcharts1(droneId);
-						
 						getEcharts2(droneId);
 						var vlc = document.getElementById("vlc"); 
 						var id = 0; 
 						//id = vlc.playlist.add(videoUrl); //添加mrl到播放列表
-						id = vlc.playlist.add("rtsp://47.94.19.230:10554/stream0.sdp"); //添加mrl到播放列表						
+						id = vlc.playlist.add("rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"); //添加mrl到播放列表						
 						vlc.playlist.playItem(id);  //播放播放列表里的序列
 						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
@@ -801,7 +819,6 @@
 			              clearInterval(app1);
 			              var app1 = {};
 			              var lastData = 0;
-			              var lastData1 = 0;
 	                      app1.count = 10;
 				          app1.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=6';
@@ -818,8 +835,7 @@
 						      success: function(data){
 						          if(data != null){
 						          
-						          lastData = data.tsLeft;
-						          lastData1 = data.tsRight;
+						          lastData = data.ts;
 						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
@@ -834,7 +850,7 @@
 						    data0.push(lastData);
 						    //data0.push(Math.round(Math.random() * 1000));
 						    data1.shift();
-						    data1.push(lastData1); 
+						    data1.push(0); 
 						    option1.xAxis[0].data.shift();
 				    		option1.xAxis[0].data.push(axisData);
 				    		option1.xAxis[1].data.shift();
@@ -856,8 +872,7 @@
 				     function getEcharts2(droneId){
 			     		  clearInterval(app2);
 			     		  var app2 = {};
-			     		  var lastData2=0;
-			     		  var lastData3=0;
+			     		  var lastData1=0;
 	 					  app2.count = 10;
 				          app2.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=7';
@@ -873,8 +888,7 @@
 						      },
 						      success: function(data){
 						          if(data != null){
-						          lastData2 = data.carNumLeft;
-						          lastData3 = data.carNumRight;
+						          lastData1 = data.carNum;
 						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
@@ -887,9 +901,9 @@
 						    var data3 = option2.series[0].data;
 						    var data4 = option2.series[1].data;
 						    data3.shift();
-						    data3.push(lastData2);
+						    data3.push(lastData1);
 						    data4.shift();
-						    data4.push(lastData3);
+						    data4.push(0);
 						    option2.xAxis[0].data.shift();
 				    		option2.xAxis[0].data.push(axisData1);
 				    		option2.xAxis[1].data.shift();
@@ -921,10 +935,10 @@
            	cache: false, 
            	dataType: 'json',
            	url: '/droneSystem/DroneServlet.do?method=3',
-//           	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
+           	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
 //			data:{droneId:droneId, type:3,inputStream:"D:\\test\\total_Receive_HDMI.h264"},
 //			data:{droneId:droneId, type:3,inputStream:"rtsp://47.94.19.230:10554/gzrtsp.sdp"},
-			data:{droneId:droneId, type:3,inputStream:"rtsp://47.94.19.230:10554/stream0.sdp"},
+
             success: function(data){
             //alert(321);
          		videoId = data.videoId;
@@ -963,46 +977,172 @@
 		}); 	
 	    
 	}
-
-	function totable3(data){
+	
+	
+	/*分页用户查询功能 */
+	//全局变量
+	var currentPage;
+	var totalPage;
+	var isInit = false;
+	/* *
+	 * @brief 按分页要求查询用户
+	 * @params data 存放查询到的用户对象和用户数的json 
+	 * @return null
+	 * */
+	function queryUser(data){
+		//清空列表
+		$("#usertable").empty();	
+		//得到存放着json对象的数组，例如：{{"Id":"1","Name":"nick"....},{"Id":"2","Name":"barry"...}}
 		data = data.rows;
+		var tr = '<th scope="col" width="300">ID</th>' +
+			'<th scope="col">用户名</th>' +
+			'<th scope="col">真实姓名</th>' +
+			'<th scope="col">部门</th>' +
+			'<th scope="col">角色</th>' +
+			'<th scope="col">账号状态</th>' +
+			'<th scope="col">注册时间</th>' +
+			'<th scope="col">操作选择</th>';
+		$("#usertable").append("<tr>"+tr+"</tr>");
+		
 		$.each(data,function (index,item) {    
-			//alert(index+item.userName);
 			var tr;  				
-			tr = "<td><input type='checkbox' /></td>"; 	
-			tr += "<td>" + item.Id + "</td>";   
+			tr = "<td class='user_id'>" + item.Id + "</td>";   
 			tr += "<td>" + item.userName + "</td>";  
 			tr += "<td>" + item.Name + "</td>";       
 			tr += "<td>" + item.JobTitle + "</td>"; 
 			tr += "<td>" + item.Education  + "</td>";     
 			tr += "<td>" + item.Status + "</td>";    
 			tr += "<td>" + item.CancelDate + "</td>";     					
-			tr += "<td><a href='#'>编辑</a><a href='#'>删除</a></td>";   
+			tr += "<td><a href='#' onclick='modifyUser(this)'>编辑</a><a href='#' onclick='deleteUser(this)'>删除</a></td>";   
 			  										
 			$("#usertable").append("<tr>"+tr+"</tr>");			
 									
-		})
-	    
+		});
 	}
 	
-	user();
-	function user(){
+	/* *
+	 * @brief 更换页面显示
+	 * @params currentPage 点击的页数
+	 * @return null
+	 * */
+	function changePage(page){
+		if(page < 1 || page > totalPage){
+			return;
+		}
+		currentPage = page;
+		var queryJson = {};
+		queryJson.page = page;
+		queryJson.rows = 10;
 		$.ajax({
 			type: "post", 
 			cache: false, 
 			dataType: 'json',
 			url: '/droneSystem/UserServlet.do?method=0',
-			data:{},
+			data: queryJson,
 			success: function(data){
-//				totable1(data);
-//				totable2(data);
-				totable3(data);
-		
+				initPage(data.total);
+				queryUser(data);
 			}
-		}); 	
-	    
+		});
 	}
-
-
+	changePage(1);
+	
+	/* *
+	 * @brief 初始化页面控件
+	 * @params  totalCntOfUser 用户的总数量
+	 * @return null
+	 * */
+	function initPage(totalCntOfUser){
+		//判断是否初始化过页数控件
+		if(isInit){
+			return;
+		}
+		isInit = true;
+		
+		totalPage = Math.ceil(totalCntOfUser / 10);
+		var aLabel = '';
+		if (totalPage >= 3) {
+			aLabel += '<a class="change_page" href="#">上一页</a>'
+			aLabel += '<a class="change_page" href="#">1</a>';
+			aLabel += '<a href="#">...</a>';
+			aLabel += '<a class="change_page" href="#">'+totalPage+'</a>';
+			aLabel += '<a class="change_page" href="#">下一页</a><span>到第<input id="switch_page" type="text" />页<button id="confirm_page">确定</button></span>'
+			$("#user").append(aLabel);
+		} else {
+			aLabel += '<a class="change_page" href="#">上一页</a>'
+			for(var i = 1; i <= totalPage; i++){
+				aLabel += '<a class="change_page" href="#">'+i+'</a>';
+			}
+			aLabel += '<a class="change_page" href="#">下一页</a><span>到第<input id="switch_page" type="text" />页<button id="confirm_page">确定</button></span>'
+			$("#user").append(aLabel);
+		}
+		$(".change_page").click(function(){
+			var temp = $(this).text();
+			if(temp == "上一页" && currentPage > 1){
+				currentPage--;
+			} else if(temp == "下一页" && currentPage < totalPage){
+				currentPage++;
+			} else if(temp != "上一页" && temp != "下一页"){
+				currentPage = temp;
+			}
+			changePage(currentPage);
+		});
+		$("#confirm_page").click(function(){
+			var switchPage = $("#switch_page").val();
+			currentPage = switchPage;
+			changePage(switchPage);
+		});
+	}
+	
+	/*添加用户功能 */
+	function saveUser(element){
+		var flag = $(element).attr('value');
+		switch(flag){
+			case "1":
+				$('#new_user_form').form({
+					url:'/droneSystem/servlet/UserServlet.do?method=1',
+					success:function(data){			
+						console.log(data);		   			
+					}
+				});
+				break;
+			default:
+				//修改用户信息
+				$('#new_user_form').form({
+					url:'/droneSystem/servlet/UserServlet.do?method=2',
+					success:function(data){			
+						console.log(data);		   			
+					},
+				});
+				break;
+		}
+		//隐藏窗口
+		$("#new_user").css("display","none");
+	}
+	
+	/*编辑用户信息的功能*/
+	function modifyUser(element){
+		var userId = $(element).parent().parent().find(".user_id").text();
+		$("#new_user").css("display","block");
+		$("#submit_btn").attr("value",""+userId);
+		$("input[name='Id']").attr("value",""+userId);
+	}
+	
+	/*删除用户的功能*/
+	function deleteUser(element){
+		var deleteJson = {};
+		deleteJson.id = $(element).parent().parent().find(".user_id").text();
+		$(element).parent().parent().remove();
+		$.ajax({
+			type: "post", 
+			dataType: 'json',
+			url: '/droneSystem/UserServlet.do?method=8',
+			data: deleteJson,
+			success: function(data){
+				console.log(data);
+			}
+		});
+	}
+	
 </script>
 
