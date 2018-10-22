@@ -147,7 +147,7 @@ public class UserServlet extends HttpServlet {
 					
 					//MessageDigest md = MessageDigest.getInstance("SHA-1");	//设置初始密码，密码用SHA-1算法加密后存放
 					//user.setPassword(new String(md.digest(user.getJobNum().getBytes())));	
-					sysuser.setPassword(sysuser.getJobNum());
+					sysuser.setPassword(request.getParameter("Password"));
 					JSONObject retObj=new JSONObject();
 					boolean res1 = userMgr.save(sysuser);
 					retObj.put("IsOK", res1);
@@ -713,12 +713,12 @@ public class UserServlet extends HttpServlet {
 		}
 				
 		String Name = req.getParameter("Name");
-		String Brief = req.getParameter("Brief");
+		String Brief = req.getParameter("userName");
 		String userName =  req.getParameter("userName");
-		String JobNum = req.getParameter("JobNum");
+		String JobNum = req.getParameter("Password");
 		String WorkLocation = req.getParameter("WorkLocation");
 		String Gender = req.getParameter("Gender");
-		Date Birthday = Date.valueOf(req.getParameter("Birthday"));
+		Date Birthday = new Date(System.currentTimeMillis());
 		String IDNum = req.getParameter("IDNum");
 		String JobTitle = req.getParameter("JobTitle");
 		String Education = req.getParameter("Education");
@@ -731,7 +731,7 @@ public class UserServlet extends HttpServlet {
 		int DepartmentId = Integer.valueOf(req.getParameter("DepartmentId"));
 		DepartmentManager depMgr= new DepartmentManager();
 		Department dep = depMgr.findById(DepartmentId);
-		int Status = Integer.valueOf(req.getParameter("Status"));
+		int Status = 0;
 		if(user.getStatus()!=null&&user.getStatus()==1&&Status==0)
 		{
 			user.setStatus(Status);
