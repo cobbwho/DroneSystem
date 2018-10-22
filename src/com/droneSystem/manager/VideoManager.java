@@ -104,7 +104,7 @@ public class VideoManager {
 	 * @param currentPage 当前页码
 	 * @param pageSize 每页的记录数
 	 * @param arr 条件键值对
-	 * @return 分页后的User列表
+	 * @return 分页后的Video列表
 	 */
 	public List<Video> findPagedAll(int currentPage, int pageSize, KeyValueWithOperator...arr) {
 		try {
@@ -118,7 +118,7 @@ public class VideoManager {
 	 * 分页函数
 	 * @param currentPage 当前页码
 	 * @param pageSize 每页的记录数
-	 * @return 分页后的Specification列表
+	 * @return 分页后的Video列表
 	 */
 	public List<Video> findPagedAll(int currentPage, int pageSize, List<KeyValueWithOperator> arr) {
 		try {

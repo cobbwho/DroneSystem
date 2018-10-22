@@ -34,7 +34,7 @@
 			<li><a href="Snow.jsp">雪阻信息</a></li>
 			<li><a href="Sand.jsp" class="pagenow">沙阻信息</a></li>
 			<li><a href="javascript:void(0)" onclick="ale()">红外信息</a></li>
-			<li><a href="javascript:void(0)" onclick="ale()">查询统计</a></li>
+			<li><a href="Inquiry.jsp">查询统计</a></li>
 		</ul>
 		</div>
 		<div class="fright">

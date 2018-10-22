@@ -291,6 +291,7 @@ public class DroneServlet extends HttpServlet {
 		        v.setStatus(0);
 		        v.setTime(time);
 		        v.setVideo(outputFile);
+		        v.setType(ReqType);
 		        vMgr.save(v);
 		        
 		        framerecorder f = new framerecorder();

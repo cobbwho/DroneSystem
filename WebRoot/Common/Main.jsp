@@ -34,7 +34,7 @@
 			<li><a href="Snow.jsp">雪阻信息</a></li>
 			<li><a href="Sand.jsp">沙阻信息</a></li>
 			<li><a href="javascript:void(0)" onclick="ale()">红外信息</a></li>
-			<li><a href="javascript:void(0)" onclick="ale()" >查询统计</a></li>
+			<li><a href="Inquiry.jsp">查询统计</a></li>
 		</ul>
 		</div>
 		<div class="fright">
@@ -793,11 +793,12 @@
 						test(droneId);
 						
 						getEcharts1(droneId);
+						
 						getEcharts2(droneId);
 						var vlc = document.getElementById("vlc"); 
 						var id = 0; 
 						//id = vlc.playlist.add(videoUrl); //添加mrl到播放列表
-						id = vlc.playlist.add("rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"); //添加mrl到播放列表						
+						id = vlc.playlist.add("rtsp://47.94.19.230:10554/stream0.sdp"); //添加mrl到播放列表						
 						vlc.playlist.playItem(id);  //播放播放列表里的序列
 						/* videojs("my-video").ready(function(){
 							var myPlayer = this;
@@ -819,6 +820,7 @@
 			              clearInterval(app1);
 			              var app1 = {};
 			              var lastData = 0;
+			              var lastData1 = 0;
 	                      app1.count = 10;
 				          app1.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=6';
@@ -835,7 +837,8 @@
 						      success: function(data){
 						          if(data != null){
 						          
-						          lastData = data.ts;
+						          lastData = data.tsLeft;
+						          lastData1 = data.tsRight;
 						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
@@ -850,7 +853,7 @@
 						    data0.push(lastData);
 						    //data0.push(Math.round(Math.random() * 1000));
 						    data1.shift();
-						    data1.push(0); 
+						    data1.push(lastData1); 
 						    option1.xAxis[0].data.shift();
 				    		option1.xAxis[0].data.push(axisData);
 				    		option1.xAxis[1].data.shift();
@@ -872,7 +875,8 @@
 				     function getEcharts2(droneId){
 			     		  clearInterval(app2);
 			     		  var app2 = {};
-			     		  var lastData1=0;
+			     		  var lastData2=0;
+			     		  var lastData3=0;
 	 					  app2.count = 10;
 				          app2.timeTicket = setInterval(function (){
 						  var url = '/droneSystem/DroneServlet.do?method=7';
@@ -888,7 +892,8 @@
 						      },
 						      success: function(data){
 						          if(data != null){
-						          lastData1 = data.carNum;
+						          lastData2 = data.carNumLeft;
+						          lastData3 = data.carNumRight;
 						          //lastData = Math.round(Math.random() * 1000);
 						        
 						          }
@@ -901,9 +906,9 @@
 						    var data3 = option2.series[0].data;
 						    var data4 = option2.series[1].data;
 						    data3.shift();
-						    data3.push(lastData1);
+						    data3.push(lastData2);
 						    data4.shift();
-						    data4.push(0);
+						    data4.push(lastData3);
 						    option2.xAxis[0].data.shift();
 				    		option2.xAxis[0].data.push(axisData1);
 				    		option2.xAxis[1].data.shift();
@@ -935,10 +940,10 @@
            	cache: false, 
            	dataType: 'json',
            	url: '/droneSystem/DroneServlet.do?method=3',
-           	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
+//           	data:{droneId:droneId, type:3,inputStream:"D:\\test\\MOV_0030.MOV"},
 //			data:{droneId:droneId, type:3,inputStream:"D:\\test\\total_Receive_HDMI.h264"},
 //			data:{droneId:droneId, type:3,inputStream:"rtsp://47.94.19.230:10554/gzrtsp.sdp"},
-
+			data:{droneId:droneId, type:3,inputStream:"rtsp://47.94.19.230:10554/stream0.sdp"},
             success: function(data){
             //alert(321);
          		videoId = data.videoId;
